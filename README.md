@@ -12,7 +12,7 @@ This fork is based on the final release of the original project (version 1.12.20
 
 Installation via composer is the suggested way to install this fork:
 
-`composer require diablomedia/zf1`
+`composer require diablomedia/zendframework1`
 
 ## Release Highlights
 
