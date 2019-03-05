@@ -92,7 +92,10 @@ class Zend_Feed_Entry_Atom extends Zend_Feed_Entry_Abstract
                 // Redirect
                 case 3:
                     $deleteUri = $response->getHeader('Location');
-                    continue;
+                    // This continue throws a warning in PHP 7.3+ so changed to a break to maintain existing
+                    // behavior (which may not be the originally desired behavior)
+                    //continue;
+                    break;
                 // Error
                 default:
                     throw new Zend_Feed_Exception("Expected response code 2xx, got $httpStatus");

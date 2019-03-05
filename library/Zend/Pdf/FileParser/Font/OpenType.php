@@ -930,7 +930,10 @@ abstract class Zend_Pdf_FileParser_Font_OpenType extends Zend_Pdf_FileParser_Fon
                     if ($language != 0) {
                         $this->_debugLog('Type 0 cmap tables must be language-independent;'
                                          . ' language: %d; skipping', $language);
-                        continue;
+                        // This continue throws a warning in PHP 7.3+ so changed to a break to maintain existing
+                        // behavior (which may not be the originally desired behavior)
+                        //continue;
+                        break;
                     }
                     break;
 
@@ -949,7 +952,10 @@ abstract class Zend_Pdf_FileParser_Font_OpenType extends Zend_Pdf_FileParser_Fon
                 case 0xa:    // break intentionally omitted
                 case 0xc:
                     $this->_debugLog('Format: 0x%x currently unsupported; skipping', $format);
-                    continue;
+                    // This continue throws a warning in PHP 7.3+ so changed to a break to maintain existing
+                    // behavior (which may not be the originally desired behavior)
+                    //continue;
+                    break;
                     //$this->skipBytes(2);
                     //$cmapLength = $this->readUInt(4);
                     //$language = $this->readUInt(4);
@@ -961,7 +967,10 @@ abstract class Zend_Pdf_FileParser_Font_OpenType extends Zend_Pdf_FileParser_Fon
 
                 default:
                     $this->_debugLog('Unknown subtable format: 0x%x; skipping', $format);
-                    continue;
+                    // This continue throws a warning in PHP 7.3+ so changed to a break to maintain existing
+                    // behavior (which may not be the originally desired behavior)
+                    //continue;
+                    break;
             }
             $cmapType = $format;
             break;

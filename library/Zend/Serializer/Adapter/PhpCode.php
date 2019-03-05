@@ -38,7 +38,9 @@ class Zend_Serializer_Adapter_PhpCode extends Zend_Serializer_Adapter_AdapterAbs
      */
     public function serialize($value, array $opts = array())
     {
-        return var_export($value, true);
+        // preg_replace here is to fix stdClass serializing which can't be eval'd
+        // This behavior is fixed in PHP 7.3 (https://github.com/php/php-src/pull/2420)
+        return preg_replace("/stdClass::__set_state\((.*)\)/s", "(object) $1", var_export($value, true));
     }
 
     /**

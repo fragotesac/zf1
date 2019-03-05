@@ -86,7 +86,7 @@ class Zend_Serializer_Adapter_PhpCodeTest extends PHPUnit\Framework\TestCase
     public function testSerializeObject()
     {
         $value    = new stdClass();
-        $expected = "stdClass::__set_state(array(\n))";
+        $expected = "(object) array(\n)";
 
         $data = $this->_adapter->serialize($value);
         $this->assertEquals($expected, $data);
@@ -128,16 +128,14 @@ class Zend_Serializer_Adapter_PhpCodeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $data);
     }
 
-/* TODO: PHP Fatal error:  Call to undefined method stdClass::__set_state()
     public function testUnserializeObject()
     {
-        $value    = "stdClass::__set_state(array(\n))";
+        $value    = "(object) array(\n)";
         $expected = new stdClass();
 
         $data = $this->_adapter->unserialize($value);
         $this->assertEquals($expected, $data);
     }
-*/
 
     public function testUnserialzeInvalid()
     {
