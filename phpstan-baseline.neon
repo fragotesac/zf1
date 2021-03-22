@@ -11,6 +11,11 @@ parameters:
 			path: library/Zend/Amf/Adobe/Introspector.php
 
 		-
+			message: "#^Method Zend_Amf_Adobe_Introspector\\:\\:introspect\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: library/Zend/Amf/Adobe/Introspector.php
+
+		-
 			message: "#^Cannot call method getDescription\\(\\) on Zend_Reflection_Docblock_Tag\\|false\\.$#"
 			count: 1
 			path: library/Zend/Amf/Adobe/Introspector.php
@@ -66,11 +71,6 @@ parameters:
 			path: library/Zend/Amf/Parse/Amf0/Serializer.php
 
 		-
-			message: "#^Comparison operation \"\\<\" between bool and 0 is always false\\.$#"
-			count: 1
-			path: library/Zend/Amf/Parse/Amf0/Serializer.php
-
-		-
 			message: "#^Binary operation \"\\*\\=\" between string and 1000 results in an error\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/Amf0/Serializer.php
@@ -101,9 +101,34 @@ parameters:
 			path: library/Zend/Amf/Parse/Amf3/Serializer.php
 
 		-
+			message: "#^Cannot call method getASClassName\\(\\) on class\\-string\\|object\\.$#"
+			count: 1
+			path: library/Zend/Amf/Parse/Amf3/Serializer.php
+
+		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/Amf3/Serializer.php
+
+		-
+			message: "#^Function mysql_num_fields not found\\.$#"
+			count: 1
+			path: library/Zend/Amf/Parse/Resource/MysqlResult.php
+
+		-
+			message: "#^Function mysql_field_type not found\\.$#"
+			count: 1
+			path: library/Zend/Amf/Parse/Resource/MysqlResult.php
+
+		-
+			message: "#^Function mysql_field_name not found\\.$#"
+			count: 1
+			path: library/Zend/Amf/Parse/Resource/MysqlResult.php
+
+		-
+			message: "#^Function mysql_fetch_object not found\\.$#"
+			count: 1
+			path: library/Zend/Amf/Parse/Resource/MysqlResult.php
 
 		-
 			message: "#^Property Zend_Amf_Parse_Resource_MysqliResult\\:\\:\\$mysqli_type has no typehint specified\\.$#"
@@ -121,7 +146,7 @@ parameters:
 			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
 
 		-
-			message: "#^Parameter \\#1 \\$link of function mysqli_num_fields expects mysqli_result, resource given\\.$#"
+			message: "#^Parameter \\#1 \\$(link|result) of function mysqli_num_fields expects mysqli_result, resource given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
 
@@ -161,7 +186,7 @@ parameters:
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
 		-
-			message: "#^Method Zend_Amf_Parse_TypeLoader\\:\\:loadType\\(\\) should return object\\|false but returns string\\.$#"
+			message: "#^Method Zend_Amf_Parse_TypeLoader\\:\\:loadType\\(\\) should return object\\|false but returns 'stdClass'\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
@@ -171,7 +196,7 @@ parameters:
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
 		-
-			message: "#^Method Zend_Amf_Parse_TypeLoader\\:\\:getMappedClassName\\(\\) should return string\\|false but returns int\\|string\\.$#"
+			message: "#^Method Zend_Amf_Parse_TypeLoader\\:\\:getMappedClassName\\(\\) should return string\\|false but returns int\\<min, \\-1\\>\\|int\\<1, max\\>\\|string\\.$#"
 			count: 2
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
@@ -191,7 +216,7 @@ parameters:
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ucwords expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ucwords expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
@@ -202,6 +227,11 @@ parameters:
 
 		-
 			message: "#^Negated boolean expression is always false\\.$#"
+			count: 1
+			path: library/Zend/Amf/Parse/TypeLoader.php
+
+		-
+			message: "#^Cannot call method parse\\(\\) on class\\-string\\|object\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
@@ -256,12 +286,12 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, string given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
@@ -276,7 +306,7 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_decode expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_decode expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
@@ -311,22 +341,27 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#3 \\$data of class Zend_Amf_Value_MessageBody constructor expects string, \\(array\\)\\|Zend_Amf_Value_Messaging_ErrorMessage given\\.$#"
+			message: "#^Parameter \\#3 \\$data of class Zend_Amf_Value_MessageBody constructor expects string, array\\|Zend_Amf_Value_Messaging_ErrorMessage given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, int(\\<0, max\\>)?\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Amf/Server.php
 
 		-
 			message: "#^Variable \\$message might not be defined\\.$#"
+			count: 1
+			path: library/Zend/Amf/Server.php
+
+		-
+			message: "#^Parameter \\#2 \\$needle of function strpos expects (int\\|)?string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
@@ -351,11 +386,6 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Method Zend_Amf_Server\\:\\:fault\\(\\) has parameter \\$code with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Amf/Server.php
-
-		-
 			message: "#^Call to an undefined method Reflection\\:\\:getPrototypes\\(\\)\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
@@ -376,6 +406,11 @@ parameters:
 			path: library/Zend/Amf/Util/BinaryStream.php
 
 		-
+			message: "#^Cannot access offset 'flt' on array\\|false\\.$#"
+			count: 1
+			path: library/Zend/Amf/Util/BinaryStream.php
+
+		-
 			message: "#^Strict comparison using \\=\\=\\= between null and string will always evaluate to false\\.$#"
 			count: 2
 			path: library/Zend/Amf/Value/MessageBody.php
@@ -386,7 +421,7 @@ parameters:
 			path: library/Zend/Amf/Value/Messaging/AcknowledgeMessage.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Value/TraitsInfo.php
 
@@ -561,7 +596,7 @@ parameters:
 			path: library/Zend/Barcode/Object/ObjectAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Object/ObjectAbstract.php
 
@@ -578,21 +613,6 @@ parameters:
 		-
 			message: "#^Method Zend_Barcode_Object_ObjectAbstract\\:\\:setBarcodeFont\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Barcode/Object/ObjectAbstract.php
-
-		-
-			message: "#^Comparison operation \"\\<\\=\" between \\*NEVER\\* and 5 is always true\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Object/ObjectAbstract.php
-
-		-
-			message: "#^Comparison operation \"\\>\\=\" between \\*NEVER\\* and 1 is always true\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Object/ObjectAbstract.php
-
-		-
-			message: "#^Result of && is always true\\.$#"
-			count: 2
 			path: library/Zend/Barcode/Object/ObjectAbstract.php
 
 		-
@@ -646,17 +666,7 @@ parameters:
 			path: library/Zend/Barcode/Object/ObjectAbstract.php
 
 		-
-			message: "#^Method Zend_Barcode_Object_ObjectAbstract\\:\\:getHeight\\(\\) should return int but returns float\\|int\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Object/ObjectAbstract.php
-
-		-
 			message: "#^Property Zend_Barcode_Object_ObjectAbstract\\:\\:\\$_width \\(int\\) does not accept float\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Object/ObjectAbstract.php
-
-		-
-			message: "#^Method Zend_Barcode_Object_ObjectAbstract\\:\\:getWidth\\(\\) should return int but returns float\\|int\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Object/ObjectAbstract.php
 
@@ -731,6 +741,11 @@ parameters:
 			path: library/Zend/Barcode/Object/Royalmail.php
 
 		-
+			message: "#^Method Zend_Barcode_Object_Royalmail\\:\\:getChecksum\\(\\) should return int but returns int\\|string\\|false\\.$#"
+			count: 1
+			path: library/Zend/Barcode/Object/Royalmail.php
+
+		-
 			message: "#^Parameter \\#4 \\$font of method Zend_Barcode_Object_ObjectAbstract\\:\\:_addText\\(\\) expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Object/Upca.php
@@ -756,27 +771,27 @@ parameters:
 			path: library/Zend/Barcode/Object/Upce.php
 
 		-
-			message: "#^Property Zend_Barcode_Renderer_Image\\:\\:\\$_resource \\(resource\\) does not accept resource\\|false\\.$#"
-			count: 1
+			message: "#^Property Zend_Barcode_Renderer_Image\\:\\:\\$_imageBackgroundColor \\(int\\) does not accept int\\|false\\.$#"
+			count: 2
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$im of function imagecolorallocate expects resource, resource\\|false given\\.$#"
+			message: "#^Property Zend_Barcode_Renderer_Image\\:\\:\\$_imageForeColor \\(int\\) does not accept int\\|false\\.$#"
+			count: 2
+			path: library/Zend/Barcode/Renderer/Image.php
+
+		-
+			message: "#^Parameter \\#1 \\$im(age)? of function imagecolorallocate expects (resource, resource|GdImage, GdImage)\\|false given\\.$#"
 			count: 3
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$im of function imagefilledrectangle expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$im(age)? of function imagefilledrectangle expects (resource|GdImage), (resource|GdImage)\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$im of function imagesx expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#1 \\$im of function imagesy expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#6 \\$col(or)? of function imagefilledrectangle expects int, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -801,12 +816,22 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, string given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
 			message: "#^Method Zend_Barcode_Renderer_Image\\:\\:_drawPolygon\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: library/Zend/Barcode/Renderer/Image.php
+
+		-
+			message: "#^Parameter \\#4 \\$col(or)? of function imagefilledpolygon expects int(\\|null)?, int\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Barcode/Renderer/Image.php
+
+		-
+			message: "#^Parameter \\#4 \\$col(or)? of function imagepolygon expects int(\\|null)?, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -836,8 +861,23 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
+			message: "#^Cannot access offset 0 on array\\|false\\.$#"
+			count: 2
+			path: library/Zend/Barcode/Renderer/Image.php
+
+		-
+			message: "#^Cannot access offset 2 on array\\|false\\.$#"
+			count: 2
+			path: library/Zend/Barcode/Renderer/Image.php
+
+		-
 			message: "#^Parameter \\#4 \\$x of function imagettftext expects int, float given\\.$#"
 			count: 1
+			path: library/Zend/Barcode/Renderer/Image.php
+
+		-
+			message: "#^Variable \\$width might not be defined\\.$#"
+			count: 2
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
@@ -846,8 +886,8 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Variable \\$width might not be defined\\.$#"
-			count: 2
+			message: "#^Parameter \\#6 \\$col(or)? of function imagettftext expects int, int\\|false given\\.$#"
+			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
@@ -1041,17 +1081,7 @@ parameters:
 			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Method Zend_Cloud_DocumentService_Adapter_WindowsAzure\\:\\:insertDocument\\(\\) has parameter \\$collectionName with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
-
-		-
 			message: "#^Method Zend_Cloud_DocumentService_Adapter_WindowsAzure\\:\\:insertDocument\\(\\) should return bool but return statement is missing\\.$#"
-			count: 1
-			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
-
-		-
-			message: "#^Method Zend_Cloud_DocumentService_Adapter_WindowsAzure\\:\\:replaceDocument\\(\\) has parameter \\$collectionName with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
 
@@ -1081,11 +1111,6 @@ parameters:
 			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Method Zend_Cloud_DocumentService_Adapter_WindowsAzure\\:\\:deleteDocument\\(\\) has parameter \\$collectionName with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
-
-		-
 			message: "#^Cannot call method getPartitionKey\\(\\) on Zend_Service_WindowsAzure_Storage_TableEntity\\|null\\.$#"
 			count: 1
 			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
@@ -1106,7 +1131,7 @@ parameters:
 			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Method Zend_Cloud_DocumentService_Adapter_WindowsAzure\\:\\:select\\(\\) has parameter \\$fields with no typehint specified\\.$#"
+			message: "#^Parameter \\#1 \\$select of method Zend_Cloud_DocumentService_Adapter_WindowsAzure_Query\\:\\:select\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
 
@@ -1136,7 +1161,12 @@ parameters:
 			path: library/Zend/Cloud/DocumentService/Query.php
 
 		-
-			message: "#^Property Zend_Cloud_Exception\\:\\:\\$_clientException \\(Exception\\) does not accept Exception\\|null\\.$#"
+			message: "#^Method Zend_Cloud_Exception\\:\\:__construct\\(\\) has parameter \\$clientException with no typehint specified\\.$#"
+			count: 1
+			path: library/Zend/Cloud/Exception.php
+
+		-
+			message: "#^Method Zend_Cloud_Exception\\:\\:__construct\\(\\) has parameter \\$message with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Cloud/Exception.php
 
@@ -1166,12 +1196,12 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
 		-
-			message: "#^Parameter \\#1 \\$socket of function stream_set_blocking expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(socket|stream) of function stream_set_blocking expects resource, resource\\|false given\\.$#"
 			count: 5
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
 		-
-			message: "#^Parameter \\#1 \\$source of function stream_get_contents expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(source|stream) of function stream_get_contents expects resource, resource\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
@@ -1246,7 +1276,7 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function explode expects string, array\\|string given\\.$#"
+			message: "#^Parameter \\#2 \\$str(ing)? of function explode expects string, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
 
@@ -1281,34 +1311,19 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/ImageList.php
 
 		-
-			message: "#^Method Zend_Cloud_Infrastructure_ImageList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/Infrastructure/ImageList.php
-
-		-
-			message: "#^Method Zend_Cloud_Infrastructure_ImageList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/Infrastructure/ImageList.php
-
-		-
 			message: "#^Invalid array key type array\\.$#"
 			count: 2
 			path: library/Zend/Cloud/Infrastructure/Instance.php
 
 		-
-			message: "#^Method Zend_Cloud_Infrastructure_InstanceList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/Infrastructure/InstanceList.php
-
-		-
-			message: "#^Method Zend_Cloud_Infrastructure_InstanceList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/Infrastructure/InstanceList.php
-
-		-
 			message: "#^Method Zend_Cloud_QueueService_Adapter\\:\\:getClient\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Cloud/QueueService/Adapter.php
+
+		-
+			message: "#^Parameter \\#2 \\$options \\(string\\) of method Zend_Cloud_QueueService_Adapter_Sqs\\:\\:createQueue\\(\\) should be compatible with parameter \\$options \\(array\\) of method Zend_Cloud_QueueService_Adapter\\:\\:createQueue\\(\\)$#"
+			count: 2
+			path: library/Zend/Cloud/QueueService/Adapter/Sqs.php
 
 		-
 			message: "#^Offset 30 does not exist on string\\|null\\.$#"
@@ -1431,7 +1446,7 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_diff expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(arr1|array) of function array_diff expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
 
@@ -1476,7 +1491,7 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/Rackspace.php
 
 		-
-			message: "#^Cannot assign offset 'metadata' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'metadata' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/Rackspace.php
 
@@ -1541,22 +1556,22 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function fwrite expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(str|data) of function fwrite expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fclose expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$file of function file_put_contents expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$file(name)? of function file_put_contents expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
@@ -1726,7 +1741,7 @@ parameters:
 			path: library/Zend/CodeGenerator/Php/File.php
 
 		-
-			message: "#^Method Zend_CodeGenerator_Php_Method\\:\\:setFinal\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_CodeGenerator_Php_Method\\:\\:setFinal\\(\\) should return Zend_CodeGenerator_Php_Member_Abstract but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/CodeGenerator/Php/Method.php
 
@@ -1761,12 +1776,17 @@ parameters:
 			path: library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function str_repeat expects string, int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|string) of function str_repeat expects string, int\\|string given\\.$#"
 			count: 3
 			path: library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 
 		-
 			message: "#^Property Zend_Console_Getopt\\:\\:\\$_getoptConfig has no typehint specified\\.$#"
+			count: 1
+			path: library/Zend/Console/Getopt.php
+
+		-
+			message: "#^Variable \\$argv in isset\\(\\) always exists and is not nullable\\.$#"
 			count: 1
 			path: library/Zend/Console/Getopt.php
 
@@ -1781,17 +1801,12 @@ parameters:
 			path: library/Zend/Console/Getopt.php
 
 		-
+			message: "#^Method Zend_Console_Getopt\\:\\:toXml\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: library/Zend/Console/Getopt.php
+
+		-
 			message: "#^Method Zend_Console_Getopt\\:\\:checkRequiredArguments\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Console/Getopt.php
-
-		-
-			message: "#^Parameter \\#1 \\$flag of method Zend_Console_Getopt\\:\\:_parseSingleOption\\(\\) expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Console/Getopt.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Console/Getopt.php
 
@@ -1816,7 +1831,7 @@ parameters:
 			path: library/Zend/Feed.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Feed.php
 
@@ -1861,7 +1876,7 @@ parameters:
 			path: library/Zend/Feed/Abstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Abstract.php
 
@@ -1887,6 +1902,11 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property Zend_Feed_Abstract\\:\\:\\$_entryClassName\\.$#"
+			count: 1
+			path: library/Zend/Feed/Abstract.php
+
+		-
+			message: "#^Method Zend_Feed_Abstract\\:\\:_importFeedFromString\\(\\) should return string but returns bool\\|string\\.$#"
 			count: 1
 			path: library/Zend/Feed/Abstract.php
 
@@ -1961,7 +1981,12 @@ parameters:
 			path: library/Zend/Feed/Atom.php
 
 		-
-			message: "#^Parameter \\#1 \\$importednode of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Atom.php
+
+		-
+			message: "#^Method Zend_Feed_Atom\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/Feed/Atom.php
 
@@ -2006,12 +2031,22 @@ parameters:
 			path: library/Zend/Feed/Element.php
 
 		-
-			message: "#^Parameter \\#1 \\$importednode of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Element.php
+
+		-
+			message: "#^Method Zend_Feed_Element\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/Feed/Element.php
 
 		-
 			message: "#^Cannot call method saveXML\\(\\) on DOMDocument\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Element.php
+
+		-
+			message: "#^Method Zend_Feed_Element\\:\\:saveXmlFragment\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/Feed/Element.php
 
@@ -2096,7 +2131,7 @@ parameters:
 			path: library/Zend/Feed/Entry/Abstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Entry/Abstract.php
 
@@ -2121,7 +2156,7 @@ parameters:
 			path: library/Zend/Feed/Entry/Atom.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Entry/Atom.php
 
@@ -2196,12 +2231,7 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
 
 		-
-			message: "#^Cannot assign offset string to array\\|false\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
 
@@ -2221,14 +2251,9 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
 
 		-
-			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/Model/ModelAbstract.php
 
 		-
 			message: "#^Cannot access property \\$created_time on Zend_Db_Table_Row_Abstract\\|null\\.$#"
@@ -2302,6 +2327,11 @@ parameters:
 
 		-
 			message: "#^Offset 'hub_verify_token' does not exist on array\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Pubsubhubbub/Subscriber/Callback.php
+
+		-
+			message: "#^Cannot access offset 'xhub\\.subscription' on array\\|void\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Subscriber/Callback.php
 
@@ -2381,7 +2411,7 @@ parameters:
 			path: library/Zend/Feed/Reader.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Feed/Reader.php
 
@@ -2413,6 +2443,21 @@ parameters:
 		-
 			message: "#^Cannot access property \\$length on DOMNodeList\\|false\\.$#"
 			count: 13
+			path: library/Zend/Feed/Reader.php
+
+		-
+			message: "#^Left side of \\|\\| is always false\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader.php
+
+		-
+			message: "#^Right side of \\|\\| is always false\\.$#"
+			count: 3
+			path: library/Zend/Feed/Reader.php
+
+		-
+			message: "#^If condition is always false\\.$#"
+			count: 1
 			path: library/Zend/Feed/Reader.php
 
 		-
@@ -2501,7 +2546,7 @@ parameters:
 			path: library/Zend/Feed/Reader/Entry/Atom.php
 
 		-
-			message: "#^Method Zend_Feed_Reader_Entry_Atom\\:\\:setXpath\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Feed_Reader_Entry_Atom\\:\\:setXpath\\(\\) should return \\$this\\(Zend_Feed_Reader_Entry_Atom\\) but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Entry/Atom.php
 
@@ -2611,9 +2656,24 @@ parameters:
 			path: library/Zend/Feed/Reader/Entry/Rss.php
 
 		-
-			message: "#^Method Zend_Feed_Reader_Entry_Rss\\:\\:setXpath\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Feed_Reader_Entry_Rss\\:\\:setXpath\\(\\) should return \\$this\\(Zend_Feed_Reader_Entry_Rss\\) but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Entry/Rss.php
+
+		-
+			message: "#^Property Zend_Feed_Reader_EntryAbstract\\:\\:\\$_domDocument \\(DOMDocument\\) does not accept DOMDocument\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/EntryAbstract.php
+
+		-
+			message: "#^Parameter \\#1 \\$feed of static method Zend_Feed_Reader\\:\\:detectType\\(\\) expects DOMDocument\\|string\\|Zend_Feed_Abstract, DOMDocument\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/EntryAbstract.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_EntryAbstract\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/EntryAbstract.php
 
 		-
 			message: "#^Negated boolean expression is always false\\.$#"
@@ -2621,7 +2681,7 @@ parameters:
 			path: library/Zend/Feed/Reader/EntryAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/EntryAbstract.php
 
@@ -2633,6 +2693,11 @@ parameters:
 		-
 			message: "#^Argument of an invalid type DOMNodeList\\|false supplied for foreach, only iterables are supported\\.$#"
 			count: 3
+			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:getAuthors\\(\\) should return array but returns Zend_Feed_Reader_Collection_Author\\|null\\.$#"
+			count: 1
 			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
 
 		-
@@ -2651,7 +2716,7 @@ parameters:
 			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
 
 		-
-			message: "#^Parameter \\#1 \\$importednode of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMNode\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMNode\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
 
@@ -2667,6 +2732,21 @@ parameters:
 
 		-
 			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:_collectXhtml\\(\\) has parameter \\$xhtml with no typehint specified\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:getDateCreated\\(\\) should return string but returns Zend_Date\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:getDateModified\\(\\) should return string but returns Zend_Date\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:getEnclosure\\(\\) should return string but returns stdClass\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
 
@@ -2711,11 +2791,6 @@ parameters:
 			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
 
 		-
-			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:_registerNamespaces\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
-
-		-
 			message: "#^Method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:_getAtomType\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/Atom/Entry.php
@@ -2728,6 +2803,11 @@ parameters:
 		-
 			message: "#^Argument of an invalid type DOMNodeList\\|false supplied for foreach, only iterables are supported\\.$#"
 			count: 3
+			path: library/Zend/Feed/Reader/Extension/Atom/Feed.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_Atom_Feed\\:\\:getAuthors\\(\\) should return array but returns Zend_Feed_Reader_Collection_Author\\|null\\.$#"
+			count: 1
 			path: library/Zend/Feed/Reader/Extension/Atom/Feed.php
 
 		-
@@ -2776,11 +2856,6 @@ parameters:
 			path: library/Zend/Feed/Reader/Extension/Content/Entry.php
 
 		-
-			message: "#^Method Zend_Feed_Reader_Extension_Content_Entry\\:\\:_registerNamespaces\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/Extension/Content/Entry.php
-
-		-
 			message: "#^Method Zend_Feed_Reader_Extension_CreativeCommons_Entry\\:\\:getLicense\\(\\) has parameter \\$index with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/CreativeCommons/Entry.php
@@ -2791,14 +2866,14 @@ parameters:
 			path: library/Zend/Feed/Reader/Extension/CreativeCommons/Entry.php
 
 		-
-			message: "#^Method Zend_Feed_Reader_Extension_CreativeCommons_Entry\\:\\:_registerNamespaces\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/Extension/CreativeCommons/Entry.php
-
-		-
 			message: "#^Method Zend_Feed_Reader_Extension_CreativeCommons_Feed\\:\\:getLicense\\(\\) has parameter \\$index with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/CreativeCommons/Feed.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_DublinCore_Entry\\:\\:getAuthors\\(\\) should return array but returns Zend_Feed_Reader_Collection_Author\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/DublinCore/Entry.php
 
 		-
 			message: "#^Cannot access property \\$length on DOMNodeList\\|false\\.$#"
@@ -2809,6 +2884,16 @@ parameters:
 			message: "#^Argument of an invalid type DOMNodeList\\|false supplied for foreach, only iterables are supported\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/DublinCore/Feed.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_DublinCore_Feed\\:\\:getAuthors\\(\\) should return array but returns Zend_Feed_Reader_Collection_Author\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/DublinCore/Feed.php
+
+		-
+			message: "#^Parameter \\#1 \\$feed of static method Zend_Feed_Reader\\:\\:detectType\\(\\) expects DOMDocument\\|string\\|Zend_Feed_Abstract, DOMDocument\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/EntryAbstract.php
 
 		-
 			message: "#^Method Zend_Feed_Reader_Extension_EntryAbstract\\:\\:getDomDocument\\(\\) should return DOMDocument but returns DOMDocument\\|null\\.$#"
@@ -2836,11 +2921,6 @@ parameters:
 			path: library/Zend/Feed/Reader/Extension/FeedAbstract.php
 
 		-
-			message: "#^Method Zend_Feed_Reader_Extension_Podcast_Entry\\:\\:_registerNamespaces\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/Extension/Podcast/Entry.php
-
-		-
 			message: "#^Cannot access property \\$length on DOMNodeList\\|false\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/Podcast/Feed.php
@@ -2851,12 +2931,22 @@ parameters:
 			path: library/Zend/Feed/Reader/Extension/Podcast/Feed.php
 
 		-
+			message: "#^Method Zend_Feed_Reader_Extension_Podcast_Feed\\:\\:getCategories\\(\\) should return string but returns array\\<int\\|string, array\\<int\\|string, null\\>\\|null\\>\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/Podcast/Feed.php
+
+		-
 			message: "#^Method Zend_Feed_Reader_Extension_Podcast_Feed\\:\\:_registerNamespaces\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/Podcast/Feed.php
 
 		-
 			message: "#^Binary operation \"\\+\" between string and 0 results in an error\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Extension/Slash/Entry.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Extension_Slash_Entry\\:\\:getCommentCount\\(\\) should return int but returns null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Extension/Slash/Entry.php
 
@@ -2946,6 +3036,16 @@ parameters:
 			path: library/Zend/Feed/Reader/Feed/Atom.php
 
 		-
+			message: "#^Property Zend_Feed_Reader_FeedAbstract\\:\\:\\$_domDocument \\(DOMDocument\\) does not accept DOMDocument\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Feed/Atom/Source.php
+
+		-
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Feed/Atom/Source.php
+
+		-
 			message: "#^Return type \\(void\\) of method Zend_Feed_Reader_Feed_Atom_Source\\:\\:count\\(\\) should be compatible with return type \\(int\\) of method Countable\\:\\:count\\(\\)$#"
 			count: 2
 			path: library/Zend/Feed/Reader/Feed/Atom/Source.php
@@ -3007,6 +3107,11 @@ parameters:
 
 		-
 			message: "#^Cannot call method getDateModified\\(\\) on Zend_Feed_Reader_Extension_FeedAbstract\\|null\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/Feed/Rss.php
+
+		-
+			message: "#^Method Zend_Feed_Reader_Feed_Rss\\:\\:getLastBuildDate\\(\\) should return Zend_Date but returns Zend_Date\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/Feed/Rss.php
 
@@ -3096,17 +3201,12 @@ parameters:
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
 		-
+			message: "#^Method Zend_Feed_Reader_FeedAbstract\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: library/Zend/Feed/Reader/FeedAbstract.php
+
+		-
 			message: "#^Method Zend_Feed_Reader_FeedAbstract\\:\\:getElement\\(\\) should return DOMElement but returns DOMElement\\|null\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/FeedAbstract.php
-
-		-
-			message: "#^Method Zend_Feed_Reader_FeedAbstract\\:\\:next\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/FeedAbstract.php
-
-		-
-			message: "#^Method Zend_Feed_Reader_FeedAbstract\\:\\:rewind\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
@@ -3131,7 +3231,7 @@ parameters:
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
@@ -3276,7 +3376,12 @@ parameters:
 			path: library/Zend/Feed/Rss.php
 
 		-
-			message: "#^Parameter \\#1 \\$importednode of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Rss.php
+
+		-
+			message: "#^Method Zend_Feed_Rss\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/Feed/Rss.php
 
@@ -3541,7 +3646,7 @@ parameters:
 			path: library/Zend/Feed/Writer/Entry.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Entry.php
 
@@ -3761,7 +3866,7 @@ parameters:
 			path: library/Zend/Feed/Writer/Feed/FeedAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Feed/FeedAbstract.php
 
@@ -3806,11 +3911,6 @@ parameters:
 			path: library/Zend/Feed/Writer/Renderer/Feed/Atom.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, int\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Writer/Renderer/Feed/Atom/AtomAbstract.php
-
-		-
 			message: "#^Parameter \\#1 \\$container of method Zend_Feed_Writer_Renderer_Feed_Atom_AtomAbstract\\:\\:__construct\\(\\) expects Zend_Feed_Writer_Feed, Zend_Feed_Writer_Source given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Renderer/Feed/Atom/Source.php
@@ -3819,6 +3919,11 @@ parameters:
 			message: "#^Parameter \\#1 \\$root of method Zend_Feed_Writer_Renderer_RendererAbstract\\:\\:setRootElement\\(\\) expects DOMElement, DOMElement\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Renderer/Feed/Rss.php
+
+		-
+			message: "#^Method Zend_Feed_Writer_Renderer_RendererAbstract\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: library/Zend/Feed/Writer/Renderer/RendererAbstract.php
 
 		-
 			message: "#^Method Zend_Feed_Writer_Renderer_RendererAbstract\\:\\:getElement\\(\\) should return DOMElement but returns DOMElement\\|null\\.$#"
@@ -3846,17 +3951,7 @@ parameters:
 			path: library/Zend/Feed/Writer/Renderer/RendererInterface.php
 
 		-
-			message: "#^Method Zend_Gdata\\:\\:import\\(\\) has parameter \\$useObjectMapping with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata.php
-
-		-
 			message: "#^Call to an undefined method Zend_Gdata\\:\\:decodeRequest\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Gdata.php
-
-		-
-			message: "#^Method Zend_Gdata\\:\\:getEntry\\(\\) has parameter \\$className with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata.php
 
@@ -3921,19 +4016,9 @@ parameters:
 			path: library/Zend/Gdata/Analytics/AccountEntry.php
 
 		-
-			message: "#^Method Zend_Gdata_Analytics_AccountEntry\\:\\:__construct\\(\\) has parameter \\$element with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Analytics/AccountEntry.php
-
-		-
 			message: "#^Method Zend_Gdata_Analytics_AccountFeed\\:\\:__construct\\(\\) has parameter \\$element with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Analytics/AccountFeed.php
-
-		-
-			message: "#^Property Zend_Gdata_Analytics_AccountQuery\\:\\:\\$_defaultFeedUri has no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Analytics/AccountQuery.php
 
 		-
 			message: "#^Method Zend_Gdata_Analytics_AccountQuery\\:\\:goals\\(\\) has parameter \\$profileId with no typehint specified\\.$#"
@@ -3944,11 +4029,6 @@ parameters:
 			message: "#^Method Zend_Gdata_Analytics_DataFeed\\:\\:__construct\\(\\) has parameter \\$element with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Analytics/DataFeed.php
-
-		-
-			message: "#^Property Zend_Gdata_Analytics_DataQuery\\:\\:\\$_defaultFeedUri has no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Analytics/DataQuery.php
 
 		-
 			message: "#^Property Zend_Gdata_Analytics_Extension_Dimension\\:\\:\\$_value has no typehint specified\\.$#"
@@ -4106,7 +4186,7 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App.php
 
@@ -4121,7 +4201,7 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App.php
 
@@ -4156,7 +4236,7 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App.php
 
@@ -4201,7 +4281,7 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4221,7 +4301,7 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#2 \\$qualifiedname of method DOMDocument\\:\\:createElementNS\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#2 \\$qualifiedName of method DOMDocument\\:\\:createElementNS\\(\\) expects string, string\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4231,7 +4311,12 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$name of method DOMDocument\\:\\:createElement\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$localName of method DOMDocument\\:\\:createElement\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Gdata/App/Base.php
+
+		-
+			message: "#^Cannot call method createTextNode\\(\\) on DOMDocument\\|null\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4256,12 +4341,17 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
+			message: "#^Argument of an invalid type DOMNamedNodeMap\\|null supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: library/Zend/Gdata/App/Base.php
+
+		-
 			message: "#^Method Zend_Gdata_App_Base\\:\\:transferFromXML\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4272,6 +4362,16 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method DOMDocument\\|SimpleXMLElement\\:\\:getElementsByTagName\\(\\)\\.$#"
+			count: 1
+			path: library/Zend/Gdata/App/Base.php
+
+		-
+			message: "#^Cannot call method saveXML\\(\\) on DOMDocument\\|null\\.$#"
+			count: 1
+			path: library/Zend/Gdata/App/Base.php
+
+		-
+			message: "#^Method Zend_Gdata_App_Base\\:\\:saveXML\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4291,7 +4391,7 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_Base\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_Base\\), string\\) given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4311,7 +4411,7 @@ parameters:
 			path: library/Zend/Gdata/App/BaseMediaSource.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_BaseMediaSource\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_BaseMediaSource\\), string\\) given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/BaseMediaSource.php
 
@@ -4761,11 +4861,6 @@ parameters:
 			path: library/Zend/Gdata/App/Feed.php
 
 		-
-			message: "#^Method Zend_Gdata_App_Feed\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/Feed.php
-
-		-
 			message: "#^Negated boolean expression is always false\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/Feed.php
@@ -4956,7 +5051,7 @@ parameters:
 			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
 
@@ -4986,7 +5081,7 @@ parameters:
 			path: library/Zend/Gdata/App/MediaEntry.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fread expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/MediaFileSource.php
 
@@ -4996,7 +5091,7 @@ parameters:
 			path: library/Zend/Gdata/App/MediaFileSource.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fclose expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/MediaFileSource.php
 
@@ -5016,7 +5111,7 @@ parameters:
 			path: library/Zend/Gdata/App/Util.php
 
 		-
-			message: "#^Parameter \\#1 \\$time of function strtotime expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(date)?time of function strtotime expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Util.php
 
@@ -5036,7 +5131,7 @@ parameters:
 			path: library/Zend/Gdata/AuthSub.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function urlencode expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function urlencode expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/AuthSub.php
 
@@ -5334,11 +5429,6 @@ parameters:
 			message: "#^Method Zend_Gdata_Calendar_EventFeed\\:\\:setTimezone\\(\\) has parameter \\$value with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Calendar/EventFeed.php
-
-		-
-			message: "#^Property Zend_Gdata_Calendar_EventQuery\\:\\:\\$_defaultFeedUri has no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Calendar/EventQuery.php
 
 		-
 			message: "#^Property Zend_Gdata_Calendar_EventQuery\\:\\:\\$_comments has no typehint specified\\.$#"
@@ -5739,11 +5829,6 @@ parameters:
 			message: "#^Method Zend_Gdata_ClientLogin\\:\\:getHttpClient\\(\\) should return Zend_Gdata_HttpClient but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Gdata/ClientLogin.php
-
-		-
-			message: "#^Parameter \\#1 \\$fileExtension of static method Zend_Gdata_Docs\\:\\:lookupMimeType\\(\\) expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Docs.php
 
 		-
 			message: "#^Method Zend_Gdata_Docs\\:\\:insertDocument\\(\\) should return Zend_Gdata_Docs_DocumentListEntry but returns Zend_Gdata_App_Entry\\.$#"
@@ -7071,11 +7156,6 @@ parameters:
 			path: library/Zend/Gdata/Gapps.php
 
 		-
-			message: "#^Method Zend_Gdata_Gapps\\:\\:import\\(\\) has parameter \\$useObjectMapping with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Gapps.php
-
-		-
 			message: "#^Method Zend_Gdata_Gapps\\:\\:import\\(\\) should return string\\|Zend_Gdata_App_Feed but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps.php
@@ -7086,12 +7166,22 @@ parameters:
 			path: library/Zend/Gdata/Gapps.php
 
 		-
+			message: "#^Parameter \\#3 \\$remainingRedirects \\(int\\) of method Zend_Gdata_Gapps\\:\\:post\\(\\) should be compatible with parameter \\$remainingRedirects \\(array\\) of method Zend_Gdata_App\\:\\:post\\(\\)$#"
+			count: 1
+			path: library/Zend/Gdata/Gapps.php
+
+		-
 			message: "#^Method Zend_Gdata_Gapps\\:\\:post\\(\\) should return Zend_Http_Response but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps.php
 
 		-
 			message: "#^Parameter \\#3 \\$remainingRedirects of method Zend_Gdata_App\\:\\:post\\(\\) expects array\\|null, int\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Gdata/Gapps.php
+
+		-
+			message: "#^Parameter \\#3 \\$remainingRedirects \\(int\\) of method Zend_Gdata_Gapps\\:\\:put\\(\\) should be compatible with parameter \\$remainingRedirects \\(array\\) of method Zend_Gdata_App\\:\\:put\\(\\)$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps.php
 
@@ -7161,12 +7251,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Gapps.php
-
-		-
-			message: "#^Parameter \\#1 \\$args of method ReflectionClass\\<mixed\\>\\:\\:newInstanceArgs\\(\\) expects array\\<int, mixed\\>, array\\<int\\|string, mixed\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps.php
 
@@ -7233,6 +7318,11 @@ parameters:
 		-
 			message: "#^Method Zend_Gdata_Gapps\\:\\:updateUser\\(\\) should return Zend_Gdata_Gapps_UserEntry but returns Zend_Gdata_App_Entry\\.$#"
 			count: 1
+			path: library/Zend/Gdata/Gapps.php
+
+		-
+			message: "#^Cannot access property \\$login on string\\|Zend_Gdata_Gapps_UserEntry\\|null\\.$#"
+			count: 2
 			path: library/Zend/Gdata/Gapps.php
 
 		-
@@ -7421,7 +7511,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/EmailListEntry.php
 
 		-
-			message: "#^Cannot assign new offset to array\\|Zend_Gdata_Extension_FeedLink\\.$#"
+			message: "#^Cannot access an offset on array\\|Zend_Gdata_Extension_FeedLink\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/EmailListEntry.php
 
@@ -7756,7 +7846,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/GroupEntry.php
 
 		-
-			message: "#^Cannot assign new offset to array\\|Zend_Gdata_Gapps_Extension_Property\\.$#"
+			message: "#^Cannot access an offset on array\\|Zend_Gdata_Gapps_Extension_Property\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/GroupEntry.php
 
@@ -7826,7 +7916,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/MemberEntry.php
 
 		-
-			message: "#^Cannot assign new offset to array\\|Zend_Gdata_Gapps_Extension_Property\\.$#"
+			message: "#^Cannot access an offset on array\\|Zend_Gdata_Gapps_Extension_Property\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/MemberEntry.php
 
@@ -7946,7 +8036,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/OwnerEntry.php
 
 		-
-			message: "#^Cannot assign new offset to array\\|Zend_Gdata_Gapps_Extension_Property\\.$#"
+			message: "#^Cannot access an offset on array\\|Zend_Gdata_Gapps_Extension_Property\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/OwnerEntry.php
 
@@ -8016,7 +8106,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/ServiceException.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/ServiceException.php
 
@@ -8051,7 +8141,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/UserEntry.php
 
 		-
-			message: "#^Cannot assign new offset to array\\|Zend_Gdata_Extension_FeedLink\\.$#"
+			message: "#^Cannot access an offset on array\\|Zend_Gdata_Extension_FeedLink\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/UserEntry.php
 
@@ -8291,7 +8381,7 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
@@ -8306,7 +8396,7 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpAdapterStreamingSocket.php
 
@@ -8321,17 +8411,12 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingSocket.php
 
 		-
-			message: "#^Parameter \\#2 \\$passphrase of function openssl_pkey_get_private expects string, string\\|null given\\.$#"
+			message: "#^Property Zend_Gdata_HttpClient\\:\\:\\$_authSubPrivateKeyId \\(resource\\|null\\) does not accept (resource|OpenSSLAsymmetricKey)\\|false\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpClient.php
 
 		-
-			message: "#^Property Zend_Gdata_HttpClient\\:\\:\\$_authSubPrivateKeyId \\(resource\\|null\\) does not accept resource\\|false\\.$#"
-			count: 1
-			path: library/Zend/Gdata/HttpClient.php
-
-		-
-			message: "#^Parameter \\#3 \\$priv_key_id of function openssl_sign expects resource\\|string, resource\\|null given\\.$#"
+			message: "#^Parameter \\#3 \\$(priv_key_id|private_key) of function openssl_sign expects (resource|array\\|OpenSSLAsymmetricKey\\|OpenSSLCertificate)\\|string, resource\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpClient.php
 
@@ -8347,11 +8432,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Gdata_HttpClient\\:\\:_prepareBody\\(\\) should return resource\\|string but returns resource\\|string\\|null\\.$#"
-			count: 1
-			path: library/Zend/Gdata/HttpClient.php
-
-		-
-			message: "#^Method Zend_Gdata_HttpClient\\:\\:resetParameters\\(\\) has parameter \\$clearAll with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpClient.php
 
@@ -8936,7 +9016,7 @@ parameters:
 			path: library/Zend/Gdata/MediaMimeStream.php
 
 		-
-			message: "#^Parameter \\#1 \\$get_as_float of function microtime expects bool, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(get_)?as_float of function microtime expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/MediaMimeStream.php
 
@@ -9726,7 +9806,7 @@ parameters:
 			path: library/Zend/Gdata/Query.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_Query\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_Query\\), string\\) given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/Query.php
 
@@ -10126,7 +10206,7 @@ parameters:
 			path: library/Zend/Markup/Renderer/Html/Img.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Markup/Renderer/Html/Img.php
 
@@ -10271,17 +10351,12 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Method Zend_Measure_Number\\:\\:setValue\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Measure/Number.php
-
-		-
 			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, int given\\.$#"
 			count: 8
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtoupper expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtoupper expects string, int given\\.$#"
 			count: 4
 			path: library/Zend/Measure/Number.php
 
@@ -10291,12 +10366,17 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
+			message: "#^Method Zend_Measure_Number\\:\\:setValue\\(\\) should return Zend_Measure_Abstract but return statement is missing\\.$#"
+			count: 1
+			path: library/Zend/Measure/Number.php
+
+		-
 			message: "#^Property Zend_Measure_Abstract\\:\\:\\$_type \\(string\\) does not accept string\\|null\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function str_split expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function str_split expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
@@ -10306,17 +10386,17 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$hexadecimal_number of function hexdec expects string, float\\|int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(hexadecimal_number|hex_string) of function hexdec expects string, float\\|int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strrev expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strrev expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function sizeof expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function sizeof expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
@@ -10352,11 +10432,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$value of method Zend_Measure_Number\\:\\:_fromDecimal\\(\\) expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Measure/Number.php
-
-		-
-			message: "#^Method Zend_Measure_Number\\:\\:convertTo\\(\\) has parameter \\$locale with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
@@ -10511,7 +10586,7 @@ parameters:
 			path: library/Zend/Memory/Manager.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Memory/Manager.php
 
@@ -10581,18 +10656,8 @@ parameters:
 			path: library/Zend/Memory/Manager.php
 
 		-
-			message: "#^Method Zend_Memory_Value\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Memory/Value.php
-
-		-
 			message: "#^Call to an undefined method Zend_Memory_Container_Interface\\:\\:processUpdate\\(\\)\\.$#"
 			count: 2
-			path: library/Zend/Memory/Value.php
-
-		-
-			message: "#^Method Zend_Memory_Value\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
-			count: 1
 			path: library/Zend/Memory/Value.php
 
 		-
@@ -10601,23 +10666,33 @@ parameters:
 			path: library/Zend/Memory/Value.php
 
 		-
-			message: "#^Parameter \\#4 \\$timeout of function stream_socket_client expects float, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Mobile/Push/Apns.php
-
-		-
 			message: "#^Property Zend_Mobile_Push_Apns\\:\\:\\$_socket \\(resource\\) does not accept resource\\|false\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Apns.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function stream_set_blocking expects bool, int given\\.$#"
+			message: "#^Parameter \\#4 \\$timeout of function stream_socket_client expects float(\\|null)?, string\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Mobile/Push/Apns.php
+
+		-
+			message: "#^Parameter \\#2 \\$(enable|mode) of function stream_set_blocking expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Apns.php
 
 		-
 			message: "#^Method Zend_Mobile_Push_Apns\\:\\:_read\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
+			path: library/Zend/Mobile/Push/Apns.php
+
+		-
+			message: "#^Cannot access offset 'time' on array\\|false\\.$#"
+			count: 2
+			path: library/Zend/Mobile/Push/Apns.php
+
+		-
+			message: "#^Cannot access offset 'token' on array\\|false\\.$#"
+			count: 3
 			path: library/Zend/Mobile/Push/Apns.php
 
 		-
@@ -10648,6 +10723,11 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
 			count: 1
+			path: library/Zend/Mobile/Push/Apns.php
+
+		-
+			message: "#^Cannot access offset 'errno' on array\\|false\\.$#"
+			count: 2
 			path: library/Zend/Mobile/Push/Apns.php
 
 		-
@@ -10756,22 +10836,17 @@ parameters:
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
 		-
-			message: "#^Method Zend_Mobile_Push_Test_ApnsProxy\\:\\:_connect\\(\\) has parameter \\$uri with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
-
-		-
 			message: "#^Parameter \\#1 \\$length \\(string\\) of method Zend_Mobile_Push_Test_ApnsProxy\\:\\:_read\\(\\) should be compatible with parameter \\$length \\(int\\) of method Zend_Mobile_Push_Apns\\:\\:_read\\(\\)$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, string given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, string given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
@@ -10862,12 +10937,12 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property Zend_Pdf_Trailer\\:\\:\\$Size\\.$#"
-			count: 1
+			count: 2
 			path: library/Zend/Pdf.php
 
 		-
 			message: "#^Access to an undefined property Zend_Pdf_Trailer\\:\\:\\$Root\\.$#"
-			count: 13
+			count: 16
 			path: library/Zend/Pdf.php
 
 		-
@@ -10886,7 +10961,7 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#2 \\$(search|array) of function array_key_exists expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -11001,6 +11076,11 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
+			message: "#^Access to an undefined property Zend_Pdf_Element_Object_Stream\\:\\:\\$dictionary\\.$#"
+			count: 2
+			path: library/Zend/Pdf.php
+
+		-
 			message: "#^Method Zend_Pdf\\:\\:setOpenAction\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
@@ -11056,6 +11136,11 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
+			message: "#^Binary operation \"\\.\" between '' and array\\<int, string\\>\\|string\\|false results in an error\\.$#"
+			count: 1
+			path: library/Zend/Pdf.php
+
+		-
 			message: "#^Access to an undefined property Zend_Pdf_Trailer\\:\\:\\$Info\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
@@ -11076,7 +11161,7 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, array\\|string given\\.$#"
+			message: "#^Parameter \\#1 (\\$arr1|\\.\\.\\.\\$arrays) of function array_merge expects array, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -11201,12 +11286,12 @@ parameters:
 			path: library/Zend/Pdf/Action.php
 
 		-
-			message: "#^Method Zend_Pdf_Action\\:\\:next\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_Action\\:\\:next\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Action.php
 
 		-
-			message: "#^Method Zend_Pdf_Action\\:\\:rewind\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_Action\\:\\:rewind\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Action.php
 
@@ -11282,7 +11367,7 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property Zend_Pdf_Element_Dictionary\\|Zend_Pdf_Element_Object\\|Zend_Pdf_Element_Reference\\:\\:\\$Rect\\.$#"
-			count: 8
+			count: 12
 			path: library/Zend/Pdf/Annotation.php
 
 		-
@@ -11376,7 +11461,7 @@ parameters:
 			path: library/Zend/Pdf/Annotation/Link.php
 
 		-
-			message: "#^Variable \\$destination might not be defined\\.$#"
+			message: "#^Undefined variable\\: \\$destination$#"
 			count: 1
 			path: library/Zend/Pdf/Annotation/Link.php
 
@@ -11461,7 +11546,7 @@ parameters:
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
-			message: "#^Default value of the parameter \\#2 \\$phase \\(0\\) of method Zend_Pdf_Canvas_Abstract\\:\\:setLineDashingPattern\\(\\) is incompatible with type array\\.$#"
+			message: "#^Default value of the parameter \\#2 \\$phase \\(int\\) of method Zend_Pdf_Canvas_Abstract\\:\\:setLineDashingPattern\\(\\) is incompatible with type array\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
@@ -11491,18 +11576,18 @@ parameters:
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$x of function fmod expects float, float\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(x|num1) of function fmod expects float, float\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
 			message: "#^Variable \\$path might not be defined\\.$#"
-			count: 4
+			count: 2
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
 			message: "#^Variable \\$endAngle might not be defined\\.$#"
-			count: 6
+			count: 3
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
@@ -11521,7 +11606,7 @@ parameters:
 			path: library/Zend/Pdf/Canvas/Interface.php
 
 		-
-			message: "#^Default value of the parameter \\#2 \\$phase \\(0\\) of method Zend_Pdf_Canvas_Interface\\:\\:setLineDashingPattern\\(\\) is incompatible with type array\\.$#"
+			message: "#^Default value of the parameter \\#2 \\$phase \\(int\\) of method Zend_Pdf_Canvas_Interface\\:\\:setLineDashingPattern\\(\\) is incompatible with type array\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Canvas/Interface.php
 
@@ -11666,7 +11751,7 @@ parameters:
 			path: library/Zend/Pdf/Element/Dictionary.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(ascii|codepoint) of function chr expects int, string given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Name.php
 
@@ -11686,7 +11771,7 @@ parameters:
 			path: library/Zend/Pdf/Element/Object.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Pdf_Element\\|null, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Pdf_Element\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Object.php
 
@@ -11796,12 +11881,12 @@ parameters:
 			path: library/Zend/Pdf/Element/Object/Stream.php
 
 		-
-			message: "#^Cannot call method length\\(\\) on Zend_Pdf_Element\\|null\\.$#"
-			count: 1
+			message: "#^Access to an undefined property Zend_Pdf_Element_Object_Stream\\:\\:\\$dictionary\\.$#"
+			count: 2
 			path: library/Zend/Pdf/Element/Object/Stream.php
 
 		-
-			message: "#^Access to an undefined property Zend_Pdf_Element_Object_Stream\\:\\:\\$dictionary\\.$#"
+			message: "#^Cannot call method length\\(\\) on Zend_Pdf_Element\\|null\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Object/Stream.php
 
@@ -11846,7 +11931,7 @@ parameters:
 			path: library/Zend/Pdf/Element/Reference.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Reference.php
 
@@ -11886,11 +11971,6 @@ parameters:
 			path: library/Zend/Pdf/Element/Stream.php
 
 		-
-			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Element/String/Binary.php
-
-		-
 			message: "#^Method Zend_Pdf_ElementFactory\\:\\:close\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory.php
@@ -11916,7 +11996,7 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Method Zend_Pdf_ElementFactory\\:\\:cleanEnumerationShiftCache\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_ElementFactory\\:\\:cleanEnumerationShiftCache\\(\\) should return int but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory.php
 
@@ -11941,7 +12021,7 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function ksort expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function ksort expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory.php
 
@@ -11956,7 +12036,7 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory.php
 
@@ -12491,8 +12571,18 @@ parameters:
 			path: library/Zend/Pdf/FileParserDataSource/File.php
 
 		-
+			message: "#^Cannot access offset 1 on array\\|false\\.$#"
+			count: 2
+			path: library/Zend/Pdf/Filter/Ascii85.php
+
+		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
+			path: library/Zend/Pdf/Filter/Ascii85.php
+
+		-
+			message: "#^Cannot access offset int\\<min, 5\\> on array\\|false\\.$#"
+			count: 2
 			path: library/Zend/Pdf/Filter/Ascii85.php
 
 		-
@@ -12501,22 +12591,22 @@ parameters:
 			path: library/Zend/Pdf/Filter/AsciiHex.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float given\\.$#"
+			message: "#^Parameter \\#1 \\$(ascii|codepoint) of function chr expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#2 \\$num of function array_fill expects int, float\\|int given\\.$#"
+			message: "#^Parameter \\#2 \\$(num|count) of function array_fill expects int, float given\\.$#"
 			count: 2
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, float\\|int given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, float given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, string\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Pdf/Filter/Compression/Flate.php
 
@@ -12551,22 +12641,12 @@ parameters:
 			path: library/Zend/Pdf/NameTree.php
 
 		-
-			message: "#^Method Zend_Pdf_NameTree\\:\\:next\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_NameTree\\:\\:next\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/NameTree.php
 
 		-
 			message: "#^Method Zend_Pdf_NameTree\\:\\:key\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/NameTree.php
-
-		-
-			message: "#^Method Zend_Pdf_NameTree\\:\\:valid\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/NameTree.php
-
-		-
-			message: "#^Method Zend_Pdf_NameTree\\:\\:rewind\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/NameTree.php
 
@@ -12602,11 +12682,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Pdf_NameTree\\:\\:clear\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/NameTree.php
-
-		-
-			message: "#^Method Zend_Pdf_NameTree\\:\\:count\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/NameTree.php
 
@@ -12656,12 +12731,12 @@ parameters:
 			path: library/Zend/Pdf/Outline.php
 
 		-
-			message: "#^Method Zend_Pdf_Outline\\:\\:next\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_Outline\\:\\:next\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Outline.php
 
 		-
-			message: "#^Method Zend_Pdf_Outline\\:\\:rewind\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_Outline\\:\\:rewind\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Outline.php
 
@@ -12877,7 +12952,7 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property Zend_Pdf_Element_Dictionary\\|Zend_Pdf_Element_Object\\|Zend_Pdf_Element_Reference\\:\\:\\$Resources\\.$#"
-			count: 17
+			count: 20
 			path: library/Zend/Pdf/Page.php
 
 		-
@@ -12926,7 +13001,7 @@ parameters:
 			path: library/Zend/Pdf/Page.php
 
 		-
-			message: "#^Strict comparison using \\=\\=\\= between int and false will always evaluate to false\\.$#"
+			message: "#^Strict comparison using \\=\\=\\= between int\\<0, max\\> and false will always evaluate to false\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Parser.php
 
@@ -12976,12 +13051,7 @@ parameters:
 			path: library/Zend/Pdf/Parser.php
 
 		-
-			message: "#^Parameter \\#2 \\$length of function fread expects int, int\\<1, max\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Parser.php
-
-		-
-			message: "#^Property Zend_Pdf_StringParser\\:\\:\\$offset \\(int\\) does not accept int\\|false\\.$#"
+			message: "#^Property Zend_Pdf_StringParser\\:\\:\\$offset \\(int\\) does not accept int(\\<0, max\\>)?\\|false\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Parser.php
 
@@ -13001,42 +13071,12 @@ parameters:
 			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
 
 		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:current\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:next\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
 
 		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:key\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
-
-		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:next\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
-
-		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:rewind\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
-
-		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:valid\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
-
-		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:getChildren\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
-
-		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:hasChildren\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
-
-		-
-			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:count\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:rewind\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
 
@@ -13106,7 +13146,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font.php
 
 		-
-			message: "#^Method Zend_Pdf_Resource_Font\\:\\:toEmSpace\\(\\) should return int but returns float\\|int\\.$#"
+			message: "#^Method Zend_Pdf_Resource_Font\\:\\:toEmSpace\\(\\) should return int but returns float\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font.php
 
@@ -13176,7 +13216,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font/CidFont.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function iconv_strlen expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function iconv_strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/CidFont.php
 
@@ -13202,6 +13242,11 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$FontDescriptor\\.$#"
+			count: 1
+			path: library/Zend/Pdf/Resource/Font/CidFont/TrueType.php
+
+		-
+			message: "#^Access to an undefined property Zend_Pdf_Element_Object_Stream\\:\\:\\$dictionary\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/CidFont/TrueType.php
 
@@ -13276,6 +13321,11 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font/FontDescriptor.php
 
 		-
+			message: "#^Access to an undefined property Zend_Pdf_Element_Object_Stream\\:\\:\\$dictionary\\.$#"
+			count: 2
+			path: library/Zend/Pdf/Resource/Font/FontDescriptor.php
+
+		-
 			message: "#^Class Zend_Pdf_FileParser_Font_OpenType_Type1 not found\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/FontDescriptor.php
@@ -13301,7 +13351,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font/Simple.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function iconv_strlen expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function iconv_strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/Simple.php
 
@@ -13636,6 +13686,11 @@ parameters:
 			path: library/Zend/Pdf/Resource/GraphicsState.php
 
 		-
+			message: "#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$dictionary\\.$#"
+			count: 2
+			path: library/Zend/Pdf/Resource/Image.php
+
+		-
 			message: "#^Property Zend_Pdf_Resource_Image_Jpeg\\:\\:\\$_width has no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Image/Jpeg.php
@@ -13661,27 +13716,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Jpeg.php
 
 		-
-			message: "#^Parameter \\#2 \\$length of function fread expects int, int\\<1, max\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Jpeg.php
-
-		-
 			message: "#^Call to an undefined method Zend_Pdf_Element_Object\\:\\:skipFilters\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Jpeg.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Jpeg\\:\\:getPixelWidth\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Jpeg.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Jpeg\\:\\:getPixelHeight\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Jpeg.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Jpeg\\:\\:getProperties\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Image/Jpeg.php
 
@@ -13701,8 +13736,13 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
 		-
-			message: "#^Parameter \\#2 \\$data of function unpack expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(data|string) of function unpack expects string, string\\|false given\\.$#"
 			count: 2
+			path: library/Zend/Pdf/Resource/Image/Png.php
+
+		-
+			message: "#^Cannot access offset 'i' on array\\|false\\.$#"
+			count: 3
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
 		-
@@ -13711,7 +13751,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
@@ -13723,6 +13763,11 @@ parameters:
 		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
+			path: library/Zend/Pdf/Resource/Image/Png.php
+
+		-
+			message: "#^Access to an undefined property Zend_Pdf_Element_Object_Stream\\:\\:\\$dictionary\\.$#"
+			count: 20
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
 		-
@@ -13762,21 +13807,6 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Zend_Pdf_Element_Object\\:\\:skipFilters\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Png.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Png\\:\\:getPixelWidth\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Png.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Png\\:\\:getPixelHeight\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Png.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Png\\:\\:getProperties\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
@@ -13856,8 +13886,18 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
 		-
+			message: "#^Cannot access offset 1 on array\\|false\\.$#"
+			count: 4
+			path: library/Zend/Pdf/Resource/Image/Tiff.php
+
+		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 8
+			path: library/Zend/Pdf/Resource/Image/Tiff.php
+
+		-
+			message: "#^Cannot access offset 2 on array\\|false\\.$#"
+			count: 1
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
 		-
@@ -13886,7 +13926,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
 		-
-			message: "#^Parameter \\#2 \\$data of function unpack expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(data|string) of function unpack expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
@@ -13902,21 +13942,6 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Zend_Pdf_Element_Object\\:\\:skipFilters\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Tiff.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Tiff\\:\\:getPixelWidth\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Tiff.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Tiff\\:\\:getPixelHeight\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Image/Tiff.php
-
-		-
-			message: "#^Method Zend_Pdf_Resource_Image_Tiff\\:\\:getProperties\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
@@ -14011,17 +14036,12 @@ parameters:
 			path: library/Zend/Pdf/Style.php
 
 		-
-			message: "#^Default value of the parameter \\#2 \\$phase \\(0\\) of method Zend_Pdf_Style\\:\\:setLineDashingPattern\\(\\) is incompatible with type float\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Style.php
-
-		-
 			message: "#^Method Zend_Pdf_Style\\:\\:setLineDashingPattern\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Style.php
 
 		-
-			message: "#^Property Zend_Pdf_Style\\:\\:\\$_lineDashingPattern \\(array\\) does not accept array\\|int\\.$#"
+			message: "#^Property Zend_Pdf_Style\\:\\:\\$_lineDashingPattern \\(array\\) does not accept array\\|int\\<min, \\-1\\>\\|int\\<1, max\\>\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Style.php
 
@@ -14066,7 +14086,7 @@ parameters:
 			path: library/Zend/Pdf/Trailer.php
 
 		-
-			message: "#^Method Zend_Pdf_Trailer_Generator\\:\\:getPDFLength\\(\\) should return string but returns int\\.$#"
+			message: "#^Method Zend_Pdf_Trailer_Generator\\:\\:getPDFLength\\(\\) should return string but returns int\\<0, max\\>\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Trailer/Generator.php
 
@@ -14116,17 +14136,12 @@ parameters:
 			path: library/Zend/Queue.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function get_class expects object, class\\-string given\\.$#"
+			message: "#^Parameter \\#1 \\$object of function get_class expects object, string given\\.$#"
 			count: 1
 			path: library/Zend/Queue.php
 
 		-
 			message: "#^Variable \\$adapterName might not be defined\\.$#"
-			count: 1
-			path: library/Zend/Queue.php
-
-		-
-			message: "#^Cannot assign offset 'driverOptions' to array\\|string\\.$#"
 			count: 1
 			path: library/Zend/Queue.php
 
@@ -14171,7 +14186,7 @@ parameters:
 			path: library/Zend/Queue/Adapter/Activemq.php
 
 		-
-			message: "#^Parameter \\#2 \\$value of method Zend_Queue_Stomp_FrameInterface\\:\\:setHeader\\(\\) expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$value of method Zend_Queue_Stomp_FrameInterface\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Adapter/Activemq.php
 
@@ -14266,84 +14281,9 @@ parameters:
 			path: library/Zend/Queue/Adapter/Memcacheq.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Adapter/Memcacheq.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:isExists\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:isExists\\(\\) has parameter \\$name with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:create\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:create\\(\\) has parameter \\$name with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:create\\(\\) has parameter \\$timeout with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:delete\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:delete\\(\\) has parameter \\$name with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:getQueues\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:count\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:send\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:send\\(\\) has parameter \\$message with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:receive\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:receive\\(\\) has parameter \\$maxMessages with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:receive\\(\\) has parameter \\$timeout with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
-
-		-
-			message: "#^Method Zend_Queue_Adapter_Null\\:\\:deleteMessage\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Null.php
 
 		-
 			message: "#^Negated boolean expression is always false\\.$#"
@@ -14451,27 +14391,27 @@ parameters:
 			path: library/Zend/Queue/Stomp/Client.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function stream_set_blocking expects bool, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(enable|mode) of function stream_set_blocking expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$read_streams of function stream_select expects array\\<resource\\>, array\\<int, resource\\|false\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$read(_streams)? of function stream_select expects array\\<resource\\>(\\|null)?, array\\<int, resource\\|false\\> given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function feof expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function feof expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fread expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
@@ -14521,7 +14461,7 @@ parameters:
 			path: library/Zend/Queue/Stomp/Frame.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Frame.php
 
@@ -14546,7 +14486,7 @@ parameters:
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
 
@@ -14561,17 +14501,17 @@ parameters:
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$filter \\(\\-1\\) of method Zend_Reflection_Class\\:\\:getMethods\\(\\) is incompatible with type string\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$filter \\(int\\) of method Zend_Reflection_Class\\:\\:getMethods\\(\\) is incompatible with type string\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Parameter \\#1 \\$filter \\(string\\) of method Zend_Reflection_Class\\:\\:getMethods\\(\\) should be compatible with parameter \\$filter \\(int\\) of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\)$#"
+			message: "#^Parameter \\#1 \\$filter \\(string\\) of method Zend_Reflection_Class\\:\\:getMethods\\(\\) should be compatible with parameter \\$filter \\(int\\|null\\) of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\)$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Parameter \\#1 \\$filter of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\) expects int, string given\\.$#"
+			message: "#^Parameter \\#1 \\$filter of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\) expects int(\\|null)?, string given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
 
@@ -14591,7 +14531,7 @@ parameters:
 			path: library/Zend/Reflection/Docblock.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ltrim expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Docblock.php
 
@@ -14631,22 +14571,22 @@ parameters:
 			path: library/Zend/Reflection/Function.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$filename of function file expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Function.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice is passed by reference, so it expects variables only\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Reflection/Function.php
+
+		-
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice is passed by reference, so it expects variables only\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Function.php
 
 		-
 			message: "#^Parameter \\#4 \\$replacement of function array_splice expects array\\|string, true given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Function.php
-
-		-
-			message: "#^Parameter \\#1 \\$filename of function file expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Function.php
 
@@ -14681,7 +14621,7 @@ parameters:
 			path: library/Zend/Reflection/Method.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Method.php
 
@@ -14691,23 +14631,8 @@ parameters:
 			path: library/Zend/Reflection/Method.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_slice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_slice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
-			count: 2
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$stack of function array_shift expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 2
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, string\\|null given\\.$#"
-			count: 4
 			path: library/Zend/Reflection/Method.php
 
 		-
@@ -14716,28 +14641,13 @@ parameters:
 			path: library/Zend/Reflection/Method.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$stack of function array_unshift expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$stack of function array_pop expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$haystack of function strrpos expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Method.php
-
-		-
 			message: "#^Cannot call method getName\\(\\) on ReflectionClass\\|null\\.$#"
 			count: 1
+			path: library/Zend/Reflection/Parameter.php
+
+		-
+			message: "#^Call to an undefined method ReflectionType\\:\\:getName\\(\\)\\.$#"
+			count: 2
 			path: library/Zend/Reflection/Parameter.php
 
 		-
@@ -14756,7 +14666,7 @@ parameters:
 			path: library/Zend/Search/Lucene.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$num(ber)? of function base_convert expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene.php
 
@@ -14931,7 +14841,7 @@ parameters:
 			path: library/Zend/Search/Lucene.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene.php
 
@@ -15061,7 +14971,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 
@@ -15111,7 +15021,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/Html.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Document/Html.php
 
@@ -15131,7 +15041,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/Html.php
 
 		-
-			message: "#^Parameter \\#3 \\$str of function iconv expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$str(ing)? of function iconv expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document/Html.php
 
@@ -15161,11 +15071,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/Html.php
 
 		-
-			message: "#^Parameter \\#2 \\$parameters of function call_user_func_array expects array\\<int, mixed\\>, array given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Document/Html.php
-
-		-
 			message: "#^Cannot access property \\$childNodes on DOMNode\\|null\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Document/Html.php
@@ -15176,7 +15081,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/Html.php
 
 		-
-			message: "#^Parameter \\#1 \\$importednode of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMNode\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMNode\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document/Html.php
 
@@ -15226,7 +15131,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/OpenXml.php
 
 		-
-			message: "#^Parameter \\#2 \\$callback of function array_filter expects callable\\(mixed, mixed\\)\\: bool, 'strlen' given\\.$#"
+			message: "#^Parameter \\#2 \\$callback of function array_filter expects (\\()?callable\\(mixed, mixed\\)\\: bool(\\)\\|null)?, 'strlen' given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document/OpenXml.php
 
@@ -15451,12 +15356,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#1 \\$num of method Zend_Search_Lucene_Storage_File\\:\\:readBytes\\(\\) expects int, float\\|int given\\.$#"
+			message: "#^Parameter \\#1 \\$num of method Zend_Search_Lucene_Storage_File\\:\\:readBytes\\(\\) expects int, float given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$num(ber)? of function base_convert expects string, int given\\.$#"
 			count: 3
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -15496,7 +15401,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -15531,6 +15436,11 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
+			message: "#^Method Zend_Search_Lucene_Index_SegmentInfo\\:\\:_detectLatestDelGen\\(\\) should return int but returns int\\|false\\.$#"
+			count: 1
+			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
+
+		-
 			message: "#^Method Zend_Search_Lucene_Index_SegmentInfo\\:\\:writeChanges\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
@@ -15546,7 +15456,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#2 \\$multiplier of function str_repeat expects int, float given\\.$#"
+			message: "#^Parameter \\#2 \\$(multiplier|times) of function str_repeat expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -15876,7 +15786,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/Writer.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$num(ber)? of function base_convert expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Index/Writer.php
 
@@ -15986,28 +15896,13 @@ parameters:
 			path: library/Zend/Search/Lucene/MultiSearcher.php
 
 		-
-			message: "#^Using \\$this in static method Zend_Search_Lucene_MultiSearcher\\:\\:setDefaultSearchField\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/MultiSearcher.php
-
-		-
-			message: "#^Using \\$this in static method Zend_Search_Lucene_MultiSearcher\\:\\:getDefaultSearchField\\(\\)\\.$#"
-			count: 3
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 8
 			path: library/Zend/Search/Lucene/MultiSearcher.php
 
 		-
 			message: "#^Method Zend_Search_Lucene_MultiSearcher\\:\\:setResultSetLimit\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Search/Lucene/MultiSearcher.php
-
-		-
-			message: "#^Using \\$this in static method Zend_Search_Lucene_MultiSearcher\\:\\:setResultSetLimit\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/MultiSearcher.php
-
-		-
-			message: "#^Using \\$this in static method Zend_Search_Lucene_MultiSearcher\\:\\:getResultSetLimit\\(\\)\\.$#"
-			count: 3
 			path: library/Zend/Search/Lucene/MultiSearcher.php
 
 		-
@@ -16226,7 +16121,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Proxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Search_Lucene_Interface\\|null, 'find'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Search_Lucene_Interface\\|null, 'find'\\) given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Proxy.php
 
@@ -16671,11 +16566,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
-
-		-
 			message: "#^Method Zend_Search_Lucene_Search_Query_Phrase\\:\\:matchedDocs\\(\\) should return array but returns array\\|null\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
@@ -16706,7 +16596,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
 
@@ -16741,12 +16631,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\<int, array\\<int, int\\|string\\>\\>\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 
 		-
-			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			message: "#^Argument of an invalid type array\\<int, array\\<int, int\\|string\\>\\>\\|false supplied for foreach, only iterables are supported\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 
@@ -16881,7 +16771,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/QueryLexer.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/QueryLexer.php
 
@@ -17166,17 +17056,17 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$dir_handle of function readdir expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$dir_handle of function readdir expects resource(\\|null)?, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$dir_handle of function closedir expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$dir_handle of function closedir expects resource(\\|null)?, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, string\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
@@ -17251,12 +17141,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fseek expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fseek expects resource, resource\\|null given\\.$#"
 			count: 3
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17266,12 +17156,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function ftell expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function ftell expects resource, resource\\|null given\\.$#"
 			count: 3
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fflush expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fflush expects resource, resource\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17296,12 +17186,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fread expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function feof expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function feof expects resource, resource\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17311,12 +17201,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function flock expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function flock expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17411,7 +17301,12 @@ parameters:
 			path: library/Zend/Search/Lucene/TermStreamsPriorityQueue.php
 
 		-
-			message: "#^Parameter \\#1 \\$what of function class_implements expects object\\|string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(what|object_or_class) of function class_implements expects object\\|string, string\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Serializer.php
+
+		-
+			message: "#^Parameter \\#2 \\$haystack of function in_array expects array, array\\<string, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Serializer.php
 
@@ -17501,11 +17396,6 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Method Zend_Serializer_Adapter_PythonPickle\\:\\:__construct\\(\\) has parameter \\$opts with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Serializer/Adapter/PythonPickle.php
-
-		-
 			message: "#^Binary operation \"\\.\" between void and void results in an error\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
@@ -17531,27 +17421,27 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float\\|int\\<min, 127\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$(ascii|codepoint) of function chr expects int, float\\|int\\<min, 127\\> given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$decimal_number of function dechex expects int, float\\|int\\<1114112, max\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$num of function dechex expects int, float\\|int\\<1114112, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$base of function bcpow expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(base|num) of function bcpow expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcadd expects string, int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(left_operand|num1) of function bcadd expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcmul expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(left_operand|num1) of function bcmul expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
@@ -17561,7 +17451,7 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcsub expects string, int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(left_operand|num1) of function bcsub expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
@@ -17586,7 +17476,7 @@ parameters:
 			path: library/Zend/Service/Audioscrobbler.php
 
 		-
-			message: "#^Parameter \\#1 \\$error_handler of function set_error_handler expects \\(callable\\(int, string, string, int, array\\)\\: bool\\)\\|null, array\\(\\$this\\(Zend_Service_Audioscrobbler\\), '_errorHandler'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of function set_error_handler expects \\(callable\\(int, string, string, int, array\\)\\: bool\\)\\|null, array\\(\\$this\\(Zend_Service_Audioscrobbler\\), '_errorHandler'\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Audioscrobbler.php
 
@@ -17631,17 +17521,17 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$exception_handler of function set_exception_handler expects \\(callable\\(Throwable\\)\\: void\\)\\|null, array\\('Zend_Service…', 'phpstdex'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(exception_handler|callback) of function set_exception_handler expects \\(callable\\(Throwable\\)\\: void\\)\\|null, array\\('Zend_Service…', 'phpstdex'\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#2 \\$parameters of function call_user_func_array expects array\\<int, mixed\\>, array\\<int\\|string, mixed\\> given\\.$#"
+			message: "#^Parameter \\#2 \\$(parameters|args) of function call_user_func_array expects array\\<int, mixed\\>, array\\<int\\|string, mixed\\> given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
@@ -17681,13 +17571,18 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|true\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|true\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Service/Console/Command/ParameterSource/Argv.php
 
 		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(search|array) of function array_key_exists expects array, array\\|false given\\.$#"
 			count: 4
+			path: library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
+
+		-
+			message: "#^Possibly invalid array key type \\(array\\|string\\)\\.$#"
+			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
 
 		-
@@ -17696,17 +17591,17 @@ parameters:
 			path: library/Zend/Service/Console/Command/ParameterSource/Env.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Service/Console/Command/ParameterSource/Env.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/Prompt.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function rtrim expects string, string\\|false\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function rtrim expects string, string\\|false\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/StdIn.php
 
@@ -17721,7 +17616,7 @@ parameters:
 			path: library/Zend/Service/Delicious.php
 
 		-
-			message: "#^Default value of the parameter \\#2 \\$count \\(15\\) of method Zend_Service_Delicious\\:\\:getRecentPosts\\(\\) is incompatible with type string\\.$#"
+			message: "#^Default value of the parameter \\#2 \\$count \\(int\\) of method Zend_Service_Delicious\\:\\:getRecentPosts\\(\\) is incompatible with type string\\.$#"
 			count: 1
 			path: library/Zend/Service/Delicious.php
 
@@ -17736,7 +17631,7 @@ parameters:
 			path: library/Zend/Service/Delicious.php
 
 		-
-			message: "#^Parameter \\#1 \\$micro_seconds of function usleep expects int, float given\\.$#"
+			message: "#^Parameter \\#1 \\$micro(_)?seconds of function usleep expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Service/Delicious.php
 
@@ -17772,16 +17667,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#2 \\$values of class Zend_Service_Delicious_Post constructor expects array\\|DOMElement, DOMNode\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/Delicious/PostList.php
-
-		-
-			message: "#^Method Zend_Service_Delicious_PostList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Delicious/PostList.php
-
-		-
-			message: "#^Method Zend_Service_Delicious_PostList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/Delicious/PostList.php
 
@@ -17836,18 +17721,13 @@ parameters:
 			path: library/Zend/Service/Ebay/Finding.php
 
 		-
-			message: "#^Parameter \\#1 \\$doc of class DOMXPath constructor expects DOMDocument, DOMDocument\\|SimpleXMLElement\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|SimpleXMLElement\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/Ebay/Finding.php
 
 		-
 			message: "#^Cannot call method item\\(\\) on DOMNodeList\\|false\\.$#"
 			count: 3
-			path: library/Zend/Service/Ebay/Finding.php
-
-		-
-			message: "#^Parameter \\#2 \\$contextnode of method DOMXPath\\:\\:query\\(\\) expects DOMNode, DOMNode\\|null given\\.$#"
-			count: 2
 			path: library/Zend/Service/Ebay/Finding.php
 
 		-
@@ -17861,8 +17741,13 @@ parameters:
 			path: library/Zend/Service/Ebay/Finding.php
 
 		-
-			message: "#^Access to an undefined property DOMDocument\\:\\:\\$ebayFindingXPath\\.$#"
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
 			count: 1
+			path: library/Zend/Service/Ebay/Finding/Abstract.php
+
+		-
+			message: "#^Cannot access property \\$ebayFindingXPath on DOMDocument\\|null\\.$#"
+			count: 2
 			path: library/Zend/Service/Ebay/Finding/Abstract.php
 
 		-
@@ -18006,7 +17891,7 @@ parameters:
 			path: library/Zend/Service/Ebay/Finding/Response/Items.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Service_Ebay_Finding, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Service_Ebay_Finding, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Ebay/Finding/Response/Items.php
 
@@ -18086,7 +17971,7 @@ parameters:
 			path: library/Zend/Service/Flickr.php
 
 		-
-			message: "#^Parameter \\#1 \\$doc of class DOMXPath constructor expects DOMDocument, DOMDocument\\|SimpleXMLElement\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|SimpleXMLElement\\|false given\\.$#"
 			count: 3
 			path: library/Zend/Service/Flickr.php
 
@@ -18114,6 +17999,11 @@ parameters:
 			message: "#^Cannot call method getAttribute\\(\\) on DOMElement\\|null\\.$#"
 			count: 1
 			path: library/Zend/Service/Flickr.php
+
+		-
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/Flickr/Result.php
 
 		-
 			message: "#^Argument of an invalid type DOMNodeList\\|false supplied for foreach, only iterables are supported\\.$#"
@@ -18161,14 +18051,9 @@ parameters:
 			path: library/Zend/Service/LiveDocx.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function substr expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/LiveDocx.php
-
-		-
-			message: "#^Method Zend_Service_LiveDocx_MailMerge\\:\\:__construct\\(\\) has parameter \\$options with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/LiveDocx/MailMerge.php
 
 		-
 			message: "#^Return typehint of method Zend_Service_LiveDocx_MailMerge\\:\\:__construct\\(\\) has invalid type throws\\.$#"
@@ -18181,7 +18066,7 @@ parameters:
 			path: library/Zend/Service/LiveDocx/MailMerge.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_encode expects string, string\\|false given\\.$#"
 			count: 3
 			path: library/Zend/Service/LiveDocx/MailMerge.php
 
@@ -18471,11 +18356,6 @@ parameters:
 			path: library/Zend/Service/Rackspace/Files.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, int\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Files.php
-
-		-
 			message: "#^Parameter \\#2 \\$data of class Zend_Service_Rackspace_Files_Container constructor expects array, array\\|true given\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files.php
@@ -18486,7 +18366,7 @@ parameters:
 			path: library/Zend/Service/Rackspace/Files.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Service/Rackspace/Files.php
 
@@ -18496,52 +18376,42 @@ parameters:
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'bytes' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'bytes' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'count' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'count' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'cdn_enabled' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'cdn_enabled' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'ttl' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'ttl' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'log_retention' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'log_retention' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'cdn_uri' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'cdn_uri' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
-			message: "#^Cannot assign offset 'cdn_uri_ssl' to array\\|bool\\.$#"
+			message: "#^Cannot access offset 'cdn_uri_ssl' on array\\|bool\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/Container.php
 
 		-
 			message: "#^Method Zend_Service_Rackspace_Files_ContainerList\\:\\:__construct\\(\\) has parameter \\$service with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Files/ContainerList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Files_ContainerList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Files/ContainerList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Files_ContainerList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Files/ContainerList.php
 
@@ -18581,22 +18451,12 @@ parameters:
 			path: library/Zend/Service/Rackspace/Files/ObjectList.php
 
 		-
-			message: "#^Method Zend_Service_Rackspace_Files_ObjectList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Files/ObjectList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Files_ObjectList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Files/ObjectList.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Servers.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_encode expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Servers.php
 
@@ -18631,7 +18491,7 @@ parameters:
 			path: library/Zend/Service/Rackspace/Servers.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function rawurlencode expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function rawurlencode expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Service/Rackspace/Servers.php
 
@@ -18656,16 +18516,6 @@ parameters:
 			path: library/Zend/Service/Rackspace/Servers/ImageList.php
 
 		-
-			message: "#^Method Zend_Service_Rackspace_Servers_ImageList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers/ImageList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Servers_ImageList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers/ImageList.php
-
-		-
 			message: "#^Result of \\|\\| is always false\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Servers/Server.php
@@ -18677,16 +18527,6 @@ parameters:
 
 		-
 			message: "#^Result of \\|\\| is always false\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers/ServerList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Servers_ServerList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers/ServerList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Servers_ServerList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Servers/ServerList.php
 
@@ -18712,16 +18552,6 @@ parameters:
 
 		-
 			message: "#^Result of \\|\\| is always false\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers/SharedIpGroupList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Servers_SharedIpGroupList\\:\\:offsetSet\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers/SharedIpGroupList.php
-
-		-
-			message: "#^Method Zend_Service_Rackspace_Servers_SharedIpGroupList\\:\\:offsetUnset\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Servers/SharedIpGroupList.php
 
@@ -18756,12 +18586,12 @@ parameters:
 			path: library/Zend/Service/ShortUrl/TinyUrlCom.php
 
 		-
-			message: "#^Parameter \\#1 \\$pw of method Zend_Service_SlideShare\\:\\:setPassword\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$un of method Zend_Service_SlideShare\\:\\:setUserName\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/SlideShare.php
 
 		-
-			message: "#^Parameter \\#1 \\$un of method Zend_Service_SlideShare\\:\\:setUserName\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$pw of method Zend_Service_SlideShare\\:\\:setPassword\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/SlideShare.php
 
@@ -18851,11 +18681,6 @@ parameters:
 			path: library/Zend/Service/SqlAzure/Management/Client.php
 
 		-
-			message: "#^Right side of && is always true\\.$#"
-			count: 1
-			path: library/Zend/Service/SqlAzure/Management/Client.php
-
-		-
 			message: "#^Call to function is_null\\(\\) with string will always evaluate to false\\.$#"
 			count: 13
 			path: library/Zend/Service/SqlAzure/Management/Client.php
@@ -18876,22 +18701,7 @@ parameters:
 			path: library/Zend/Service/SqlAzure/Management/Client.php
 
 		-
-			message: "#^Negated boolean expression is always false\\.$#"
-			count: 2
-			path: library/Zend/Service/SqlAzure/Management/Client.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
-			count: 2
-			path: library/Zend/Service/SqlAzure/Management/Client.php
-
-		-
 			message: "#^Call to function is_null\\(\\) with array\\(SimpleXMLElement\\)\\|SimpleXMLElement will always evaluate to false\\.$#"
-			count: 2
-			path: library/Zend/Service/SqlAzure/Management/Client.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, SimpleXMLElement\\>\\|SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/Service/SqlAzure/Management/Client.php
 
@@ -18946,7 +18756,7 @@ parameters:
 			path: library/Zend/Service/StrikeIron/Decorator.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(object, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(object, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/StrikeIron/Decorator.php
 
@@ -18961,17 +18771,17 @@ parameters:
 			path: library/Zend/Service/Twitter.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, Zend_Oauth_Consumer\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$object(_or_class)? of function method_exists expects object\\|string, Zend_Oauth_Consumer\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Oauth_Consumer\\|null, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Oauth_Consumer\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Service_Twitter\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Service_Twitter\\), string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
@@ -20001,7 +19811,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#1 \\$fname of class Phar constructor expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$filename of class Phar constructor expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -20026,17 +19836,17 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 (\\$arr1|\\.\\.\\.\\$arrays) of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\.\\.\\.\\$(args|arrays) of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#3 \\.\\.\\.\\$args of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\.\\.\\.\\$(args|arrays) of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -20046,12 +19856,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^If condition is always true\\.$#"
-			count: 2
-			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#2 \\.\\.\\.\\$(args|arrays) of function array_merge expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -20076,12 +19881,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#2 \\$base_directory of method Phar\\:\\:buildFromIterator\\(\\) expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$directory of class RecursiveDirectoryIterator constructor expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#1 \\$path of class RecursiveDirectoryIterator constructor expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$baseDirectory of method Phar\\:\\:buildFromIterator\\(\\) expects string(\\|null)?, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -20136,12 +19941,17 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function chmod expects int, string given\\.$#"
+			message: "#^Parameter \\#2 \\$(mode|permissions) of function chmod expects int, string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function mkdir expects int, string given\\.$#"
+			message: "#^Parameter \\#2 \\$(mode|permissions) of function mkdir expects int, string given\\.$#"
+			count: 1
+			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
+
+		-
+			message: "#^Binary operation \"&\" between string and int results in an error\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
@@ -20521,17 +20331,17 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Storage.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
 		-
-			message: "#^Cannot access offset 'query' on array\\(\\)\\|array\\('scheme' \\=\\> string, 'host' \\=\\> string, 'port' \\=\\> int, 'user' \\=\\> string, 'pass' \\=\\> string, 'path' \\=\\> string, 'query' \\=\\> string, 'fragment' \\=\\> string\\)\\|false\\.$#"
+			message: "#^Cannot access offset 'query' on array\\(\\?'scheme' \\=\\> string, \\?'host' \\=\\> string, \\?'port' \\=\\> int, \\?'user' \\=\\> string, \\?'pass' \\=\\> string, \\?'path' \\=\\> string, \\?'query' \\=\\> string, \\?'fragment' \\=\\> string\\)\\|false\\.$#"
 			count: 2
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
 		-
-			message: "#^Cannot access offset 'path' on array\\(\\)\\|array\\('scheme' \\=\\> string, 'host' \\=\\> string, 'port' \\=\\> int, 'user' \\=\\> string, 'pass' \\=\\> string, 'path' \\=\\> string, 'query' \\=\\> string, 'fragment' \\=\\> string\\)\\|false\\.$#"
+			message: "#^Cannot access offset 'path' on array\\(\\?'scheme' \\=\\> string, \\?'host' \\=\\> string, \\?'port' \\=\\> int, \\?'user' \\=\\> string, \\?'pass' \\=\\> string, \\?'path' \\=\\> string, \\?'query' \\=\\> string, \\?'fragment' \\=\\> string\\)\\|false\\.$#"
 			count: 2
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
@@ -20541,7 +20351,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
 
@@ -20556,7 +20366,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php
 
@@ -20576,27 +20386,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
 
 		-
-			message: "#^Cannot access property \\$DataSources on DOMDocument\\|SimpleXMLElement\\|false\\.$#"
-			count: 23
-			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
-
-		-
-			message: "#^Left side of && is always true\\.$#"
-			count: 3
-			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
-
-		-
-			message: "#^Right side of && is always true\\.$#"
-			count: 3
-			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
-			count: 3
-			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
-
-		-
 			message: "#^Access to an undefined property Zend_Service_WindowsAzure_Diagnostics_ConfigurationInstance\\:\\:\\$DataSources\\.$#"
+			count: 37
+			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
+
+		-
+			message: "#^Cannot access property \\$DataSources on DOMDocument\\|SimpleXMLElement\\|false\\.$#"
 			count: 23
 			path: library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
 
@@ -20671,17 +20466,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Log/Writer/WindowsAzure.php
 
 		-
-			message: "#^Method Zend_Service_WindowsAzure_Log_Writer_WindowsAzure\\:\\:shutdown\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Log/Writer/WindowsAzure.php
-
-		-
 			message: "#^Call to an undefined method Zend_Service_WindowsAzure_Storage_Table\\:\\:commit\\(\\)\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Log/Writer/WindowsAzure.php
-
-		-
-			message: "#^Method Zend_Service_WindowsAzure_Log_Writer_WindowsAzure\\:\\:setFormatter\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Log/Writer/WindowsAzure.php
 
@@ -20751,11 +20536,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Right side of && is always true\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
 			message: "#^Call to function is_null\\(\\) with SimpleXMLElement\\|false will always evaluate to false\\.$#"
 			count: 5
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
@@ -20773,11 +20553,6 @@ parameters:
 		-
 			message: "#^Cannot access property \\$Error on SimpleXMLElement\\|false\\.$#"
 			count: 4
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
-			message: "#^Ternary operator condition is always true\\.$#"
-			count: 2
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
@@ -20831,22 +20606,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Negated boolean expression is always false\\.$#"
-			count: 7
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
-			count: 10
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
 			message: "#^Call to function is_null\\(\\) with array\\(SimpleXMLElement\\)\\|SimpleXMLElement will always evaluate to false\\.$#"
-			count: 9
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, SimpleXMLElement\\>\\|SimpleXMLElement given\\.$#"
 			count: 9
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -20906,7 +20666,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$data of function utf8_decode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(data|string) of function utf8_decode expects string, string\\|false given\\.$#"
 			count: 5
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -21071,7 +20831,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<SimpleXMLElement\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\<SimpleXMLElement\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -21176,7 +20936,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_encode expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -21266,12 +21026,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/SubscriptionOperationInstance.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/RetryPolicy/NoRetry.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/RetryPolicy/RetryN.php
 
@@ -21456,6 +21216,11 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage.php
 
 		-
+			message: "#^Call to function is_null\\(\\) with SimpleXMLElement will always evaluate to false\\.$#"
+			count: 1
+			path: library/Zend/Service/WindowsAzure/Storage.php
+
+		-
 			message: "#^Method Zend_Service_WindowsAzure_Storage_Batch\\:\\:__construct\\(\\) has parameter \\$baseUrl with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Batch.php
@@ -21526,7 +21291,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
@@ -21536,13 +21301,8 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^If condition is always true\\.$#"
-			count: 3
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
-			count: 5
+			message: "#^Argument of an invalid type array\\<int, SimpleXMLElement\\>\\|SimpleXMLElement\\|null supplied for foreach, only iterables are supported\\.$#"
+			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
@@ -21586,16 +21346,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Parameter \\#11 \\$cacheControl of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, false given\\.$#"
-			count: 3
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
-			message: "#^Parameter \\#12 \\$blobType of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, array given\\.$#"
-			count: 3
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
 			message: "#^Parameter \\#3 \\$snapshotId of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, null given\\.$#"
 			count: 4
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
@@ -21611,6 +21361,16 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
+			message: "#^Parameter \\#11 \\$cacheControl of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, false given\\.$#"
+			count: 3
+			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
+
+		-
+			message: "#^Parameter \\#12 \\$blobType of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, array given\\.$#"
+			count: 3
+			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
+
+		-
 			message: "#^Parameter \\#3 \\$identifier of method Zend_Service_WindowsAzure_Storage_Blob\\:\\:putBlock\\(\\) expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
@@ -21621,7 +21381,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Default value of the parameter \\#4 \\$contents \\(''\\) of method Zend_Service_WindowsAzure_Storage_Blob\\:\\:putBlock\\(\\) is incompatible with type array\\.$#"
+			message: "#^Default value of the parameter \\#4 \\$contents \\(string\\) of method Zend_Service_WindowsAzure_Storage_Blob\\:\\:putBlock\\(\\) is incompatible with type array\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
@@ -21666,32 +21426,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, SimpleXMLElement\\>\\|SimpleXMLElement given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
 			message: "#^Method Zend_Service_WindowsAzure_Storage_Blob\\:\\:getBlob\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
-			message: "#^Parameter \\#10 \\$contentLanguage of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
-			message: "#^Parameter \\#11 \\$cacheControl of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
-			message: "#^Parameter \\#12 \\$blobType of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
-			message: "#^Parameter \\#13 \\$leaseStatus of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
@@ -21712,6 +21447,26 @@ parameters:
 
 		-
 			message: "#^Parameter \\#9 \\$contentEncoding of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
+
+		-
+			message: "#^Parameter \\#10 \\$contentLanguage of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
+
+		-
+			message: "#^Parameter \\#11 \\$cacheControl of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
+
+		-
+			message: "#^Parameter \\#12 \\$blobType of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
+
+		-
+			message: "#^Parameter \\#13 \\$leaseStatus of class Zend_Service_WindowsAzure_Storage_BlobInstance constructor expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
@@ -21761,27 +21516,22 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Right side of && is always true\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
 			message: "#^Negated boolean expression is always false\\.$#"
-			count: 6
+			count: 7
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Cannot access offset 'host' on array\\(\\)\\|array\\('scheme' \\=\\> string, 'host' \\=\\> string, 'port' \\=\\> int, 'user' \\=\\> string, 'pass' \\=\\> string, 'path' \\=\\> string, 'query' \\=\\> string, 'fragment' \\=\\> string\\)\\|false\\.$#"
+			message: "#^Cannot access offset 'host' on array\\(\\?'scheme' \\=\\> string, \\?'host' \\=\\> string, \\?'port' \\=\\> int, \\?'user' \\=\\> string, \\?'pass' \\=\\> string, \\?'path' \\=\\> string, \\?'query' \\=\\> string, \\?'fragment' \\=\\> string\\)\\|false\\.$#"
 			count: 4
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Cannot assign offset 'path' to array\\<string, int\\|string\\>\\|false\\.$#"
+			message: "#^Cannot access offset 'path' on array\\(\\?'scheme' \\=\\> string, \\?'host' \\=\\> string, \\?'port' \\=\\> int, \\?'user' \\=\\> string, \\?'pass' \\=\\> string, \\?'path' \\=\\> string, \\?'query' \\=\\> string, \\?'fragment' \\=\\> string\\)\\|false\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
@@ -21811,17 +21561,17 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function current expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function current expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function next expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function next expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function reset expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array of function reset expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
@@ -21881,11 +21631,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
-			count: 2
-			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
-
-		-
 			message: "#^Call to function is_null\\(\\) with string will always evaluate to false\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
@@ -21896,7 +21641,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
 		-
-			message: "#^Default value of the parameter \\#2 \\$numOfMessages \\(1\\) of method Zend_Service_WindowsAzure_Storage_Queue\\:\\:getMessages\\(\\) is incompatible with type string\\.$#"
+			message: "#^Default value of the parameter \\#2 \\$numOfMessages \\(int\\) of method Zend_Service_WindowsAzure_Storage_Queue\\:\\:getMessages\\(\\) is incompatible with type string\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
@@ -21906,17 +21651,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, SimpleXMLElement\\>\\|SimpleXMLElement given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
-
-		-
 			message: "#^Parameter \\#6 \\$dequeueCount of class Zend_Service_WindowsAzure_Storage_QueueMessage constructor expects int, string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
 		-
-			message: "#^Default value of the parameter \\#2 \\$numOfMessages \\(1\\) of method Zend_Service_WindowsAzure_Storage_Queue\\:\\:peekMessages\\(\\) is incompatible with type string\\.$#"
+			message: "#^Default value of the parameter \\#2 \\$numOfMessages \\(int\\) of method Zend_Service_WindowsAzure_Storage_Queue\\:\\:peekMessages\\(\\) is incompatible with type string\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
@@ -21927,11 +21667,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Service_WindowsAzure_Storage_Queue\\:\\:clearMessages\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
-
-		-
-			message: "#^Right side of && is always true\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Queue.php
 
@@ -21958,16 +21693,6 @@ parameters:
 		-
 			message: "#^Parameter \\#4 \\$headers of method Zend_Service_WindowsAzure_Storage_Table\\:\\:_performRequest\\(\\) expects array, null given\\.$#"
 			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Table.php
-
-		-
-			message: "#^Negated boolean expression is always false\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Table.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, SimpleXMLElement given\\.$#"
-			count: 2
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
 		-
@@ -22031,17 +21756,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Table.php
-
-		-
-			message: "#^If condition is always true\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
@@ -22072,11 +21792,6 @@ parameters:
 
 		-
 			message: "#^Cannot call method setTimestamp\\(\\) on Zend_Service_WindowsAzure_Storage_TableEntity\\|null\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Table.php
-
-		-
-			message: "#^Right side of && is always true\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
@@ -22121,7 +21836,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
@@ -22131,12 +21846,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function explode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$str(ing)? of function explode expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function addslashes expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function addslashes expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php
 
@@ -22201,7 +21916,7 @@ parameters:
 			path: library/Zend/Service/Yahoo.php
 
 		-
-			message: "#^Parameter \\#1 \\$doc of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Yahoo/Image.php
 
@@ -22249,6 +21964,11 @@ parameters:
 			message: "#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_PageDataResult constructor expects DOMElement, DOMNode\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Yahoo/PageDataResultSet.php
+
+		-
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/Yahoo/Result.php
 
 		-
 			message: "#^Access to an undefined property Zend_Service_Yahoo_Result\\:\\:\\$_namespace\\.$#"
@@ -22299,6 +22019,11 @@ parameters:
 			message: "#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_VideoResult constructor expects DOMElement, DOMNode\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Yahoo/VideoResultSet.php
+
+		-
+			message: "#^Parameter \\#1 \\$document of class DOMXPath constructor expects DOMDocument, DOMDocument\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Service/Yahoo/WebResult.php
 
 		-
 			message: "#^Cannot call method item\\(\\) on DOMNodeList\\|false\\.$#"
@@ -22471,12 +22196,12 @@ parameters:
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
@@ -22581,7 +22306,7 @@ parameters:
 			path: library/Zend/Tool/Framework/Client/Console.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function rtrim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function rtrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Console.php
 
@@ -23136,11 +22861,6 @@ parameters:
 			path: library/Zend/Tool/Framework/Client/Storage/Directory.php
 
 		-
-			message: "#^Method Zend_Tool_Framework_Loader_Abstract\\:\\:load\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Loader/Abstract.php
-
-		-
 			message: "#^Parameter \\#1 \\$manifest of method Zend_Tool_Framework_Manifest_Repository\\:\\:addManifest\\(\\) expects Zend_Tool_Framework_Manifest_Interface, object given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Loader/Abstract.php
@@ -23346,17 +23066,7 @@ parameters:
 			path: library/Zend/Tool/Framework/Provider/Repository.php
 
 		-
-			message: "#^Parameter \\#1 \\$provider of class Zend_Tool_Framework_Provider_Signature constructor expects Zend_Tool_Framework_Provider_Interface, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Provider/Repository.php
-
-		-
 			message: "#^Parameter \\#1 \\$registry of method Zend_Tool_Framework_Provider_Signature\\:\\:setRegistry\\(\\) expects Zend_Tool_Framework_Registry_Interface, Zend_Tool_Framework_Registry_Interface\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Provider/Repository.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Provider/Repository.php
 
@@ -23391,13 +23101,33 @@ parameters:
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$object(_or_class)? of function method_exists expects object\\|string, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
 		-
 			message: "#^Parameter \\#1 \\$object of function get_class expects object, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
 			count: 3
+			path: library/Zend/Tool/Framework/Provider/Signature.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, class\\-string\\<Zend_Tool_Framework_Provider_Interface\\>\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Tool/Framework/Provider/Signature.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of function strrpos expects string, class\\-string\\<Zend_Tool_Framework_Provider_Interface\\>\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Tool/Framework/Provider/Signature.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function substr expects string, class\\-string\\<Zend_Tool_Framework_Provider_Interface\\>\\|false given\\.$#"
+			count: 1
+			path: library/Zend/Tool/Framework/Provider/Signature.php
+
+		-
+			message: "#^Parameter \\#3 \\$subject of function preg_replace expects array\\|string, string\\|false given\\.$#"
+			count: 1
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
 		-
@@ -23417,6 +23147,11 @@ parameters:
 
 		-
 			message: "#^Cannot call method getActionRepository\\(\\) on Zend_Tool_Framework_Registry_Interface\\|null\\.$#"
+			count: 2
+			path: library/Zend/Tool/Framework/Provider/Signature.php
+
+		-
+			message: "#^Offset 'action' does not exist on array\\('methodName' \\=\\> mixed, 'actionName' \\=\\> mixed, \\?'specialty' \\=\\> mixed, \\?'action' \\=\\> Zend_Tool_Framework_Action_Interface, \\?'parameterInfo' \\=\\> array\\<int\\|string, array\\('default' \\=\\> mixed, 'description' \\=\\> string\\|null, 'name' \\=\\> mixed, 'optional' \\=\\> mixed, 'position' \\=\\> int, 'type' \\=\\> mixed\\)\\>\\)\\.$#"
 			count: 2
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
@@ -23466,7 +23201,7 @@ parameters:
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 2
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
@@ -23486,7 +23221,7 @@ parameters:
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
 		-
-			message: "#^Binary operation \"\\+\" between int\\|string and 1 results in an error\\.$#"
+			message: "#^Binary operation \"\\+\" between int\\|string\\|false and 1 results in an error\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
@@ -23526,7 +23261,7 @@ parameters:
 			path: library/Zend/Tool/Framework/System/Provider/Manifest.php
 
 		-
-			message: "#^Parameter \\#2 \\$prefix of function http_build_query expects string, null given\\.$#"
+			message: "#^Parameter \\#2 \\$(numeric_)?prefix of function http_build_query expects string, null given\\.$#"
 			count: 2
 			path: library/Zend/Tool/Framework/System/Provider/Manifest.php
 
@@ -23631,11 +23366,6 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Filesystem/File.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Context_Filesystem_File\\:\\:setResource\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Context/Filesystem/File.php
-
-		-
 			message: "#^Call to an undefined method Zend_Tool_Project_Profile_Resource\\:\\:create\\(\\)\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Filesystem/File.php
@@ -23701,7 +23431,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Repository.php
 
 		-
-			message: "#^Binary operation \"\\+\" between int\\|string and 1 results in an error\\.$#"
+			message: "#^Binary operation \"\\+\" between int\\|string\\|false and 1 results in an error\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Repository.php
 
@@ -23752,11 +23482,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Tool_Project_Context_Repository\\:\\:isOverwritableContext\\(\\) has parameter \\$name with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Context/Repository.php
-
-		-
-			message: "#^Method Zend_Tool_Project_Context_Repository\\:\\:count\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Repository.php
 
@@ -23826,13 +23551,8 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php
 
 		-
-			message: "#^Cannot access offset \\(float\\|int\\) on array\\<int, string\\>\\|false\\.$#"
-			count: 2
-			path: library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php
-
-		-
-			message: "#^Cannot assign offset \\(float\\|int\\) to array\\<int, string\\>\\|false\\.$#"
-			count: 1
+			message: "#^Cannot access offset \\(float\\|int\\) on \\(array\\<int, string\\>&nonEmpty\\)\\|false\\.$#"
+			count: 3
 			path: library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php
 
 		-
@@ -23931,7 +23651,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/ConfigFile.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Context_Zf_ControllerFile\\:\\:init\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Tool_Project_Context_Zf_ControllerFile\\:\\:init\\(\\) should return Zend_Tool_Project_Context_Filesystem_File but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/ControllerFile.php
 
@@ -23956,7 +23676,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/DbTableFile.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Context_Zf_DbTableFile\\:\\:init\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Tool_Project_Context_Zf_DbTableFile\\:\\:init\\(\\) should return Zend_Tool_Project_Context_Filesystem_File but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/DbTableFile.php
 
@@ -23971,7 +23691,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/DocsDirectory.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Context_Zf_FormFile\\:\\:init\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Tool_Project_Context_Zf_FormFile\\:\\:init\\(\\) should return Zend_Tool_Project_Context_Filesystem_File but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/FormFile.php
 
@@ -23996,7 +23716,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/LayoutScriptFile.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Context_Zf_ModelFile\\:\\:init\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Tool_Project_Context_Zf_ModelFile\\:\\:init\\(\\) should return Zend_Tool_Project_Context_Filesystem_File but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/ModelFile.php
 
@@ -24061,7 +23781,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/TestApplicationControllerFile.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ltrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php
 
@@ -24116,7 +23836,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/ViewScriptFile.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Context_Zf_ZfStandardLibraryDirectory\\:\\:create\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_Tool_Project_Context_Zf_ZfStandardLibraryDirectory\\:\\:create\\(\\) should return Zend_Tool_Project_Context_Filesystem_Directory but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
 
@@ -24171,7 +23891,12 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
 
 		-
-			message: "#^Parameter \\#1 \\$importednode of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMElement\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMElement\\|(false|null) given\\.$#"
+			count: 1
+			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
+
+		-
+			message: "#^Method Zend_Tool_Project_Profile_FileParser_Xml\\:\\:serialize\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
 
@@ -24187,11 +23912,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$context of class Zend_Tool_Project_Profile_Resource constructor expects string\\|Zend_Tool_Project_Context_Interface, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
-
-		-
-			message: "#^Cannot call method attributes\\(\\) on SimpleXMLIterator\\|null\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
 
@@ -24231,8 +23951,23 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, string\\|Zend_Tool_Project_Context_Interface\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$object(_or_class)? of function method_exists expects object\\|string, string\\|Zend_Tool_Project_Context_Interface\\|null given\\.$#"
 			count: 2
+			path: library/Zend/Tool/Project/Profile/Resource.php
+
+		-
+			message: "#^Cannot call method getPersistentAttributes\\(\\) on class\\-string\\|Zend_Tool_Project_Context_Interface\\.$#"
+			count: 1
+			path: library/Zend/Tool/Project/Profile/Resource.php
+
+		-
+			message: "#^Cannot call method setResource\\(\\) on class\\-string\\|object\\.$#"
+			count: 1
+			path: library/Zend/Tool/Project/Profile/Resource.php
+
+		-
+			message: "#^Cannot call method init\\(\\) on class\\-string\\|object\\.$#"
+			count: 1
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-
@@ -24241,7 +23976,7 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string\\|Zend_Tool_Project_Context_Interface\\|null, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string\\|Zend_Tool_Project_Context_Interface\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
@@ -24493,11 +24228,6 @@ parameters:
 		-
 			message: "#^Call to an undefined method Zend_Tool_Project_Profile_Resource_Container\\:\\:getContext\\(\\)\\.$#"
 			count: 2
-			path: library/Zend/Tool/Project/Provider/Controller.php
-
-		-
-			message: "#^Variable \\$testActionResource might not be defined\\.$#"
-			count: 4
 			path: library/Zend/Tool/Project/Provider/Controller.php
 
 		-
@@ -24866,12 +24596,12 @@ parameters:
 			path: library/Zend/Tool/Project/Provider/Module.php
 
 		-
-			message: "#^Comparison operation \"\\>\" between int\\<min, \\-1\\> and 0 is always false\\.$#"
+			message: "#^Method Zend_Tool_Project_Provider_Module\\:\\:create\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Provider/Module.php
 
 		-
-			message: "#^Method Zend_Tool_Project_Provider_Module\\:\\:create\\(\\) has no return typehint specified\\.$#"
+			message: "#^Cannot call method getPath\\(\\) on class\\-string\\|object\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Provider/Module.php
 
@@ -24946,7 +24676,7 @@ parameters:
 			path: library/Zend/Tool/Project/Provider/Project.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ltrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Provider/Project.php
 
@@ -25086,11 +24816,6 @@ parameters:
 			path: library/Zend/Version.php
 
 		-
-			message: "#^Method Zend_Version\\:\\:getLatest\\(\\) should return string but returns string\\|false\\.$#"
-			count: 1
-			path: library/Zend/Version.php
-
-		-
 			message: "#^Strict comparison using \\=\\=\\= between string\\|Zend_Uri_Http and null will always evaluate to false\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Client.php
@@ -25102,7 +24827,7 @@ parameters:
 
 		-
 			message: "#^Variable \\$signatures might not be defined\\.$#"
-			count: 2
+			count: 1
 			path: library/Zend/XmlRpc/Client.php
 
 		-
@@ -25156,12 +24881,12 @@ parameters:
 			path: library/Zend/XmlRpc/Fault.php
 
 		-
-			message: "#^Negated boolean expression is always false\\.$#"
-			count: 2
-			path: library/Zend/XmlRpc/Fault.php
+			message: "#^Method Zend_XmlRpc_Generator_DomDocument\\:\\:_writeTextData\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: library/Zend/XmlRpc/Generator/DomDocument.php
 
 		-
-			message: "#^Method Zend_XmlRpc_Generator_DomDocument\\:\\:_writeTextData\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Zend_XmlRpc_Generator_DomDocument\\:\\:saveXml\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Generator/DomDocument.php
 
@@ -25201,7 +24926,7 @@ parameters:
 			path: library/Zend/XmlRpc/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_XmlRpc_Server_System, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_XmlRpc_Server_System, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Server.php
 
@@ -25276,7 +25001,7 @@ parameters:
 			path: library/Zend/XmlRpc/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(int\\|string, 'observe'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\(int\\|string\\), 'observe'\\) given\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Server/Fault.php
 
@@ -25336,11 +25061,6 @@ parameters:
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Instantiated class Zend_XmlRpc_Generator_GeneratorAbstract is abstract\\.$#"
-			count: 1
-			path: library/Zend/XmlRpc/Value.php
-
-		-
 			message: "#^Call to an undefined method Zend_XmlRpc_Value\\:\\:_generateXml\\(\\)\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Value.php
@@ -25361,17 +25081,17 @@ parameters:
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function key expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function key expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function current expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function current expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function next expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function next expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/XmlRpc/Value.php
 
