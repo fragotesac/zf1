@@ -90,8 +90,8 @@ EOS;
 
         $classDocblock = $classReflection->getDocblock();
 
-        $this->assertEquals($classDocblock->getStartLine(), 66);
-        $this->assertEquals($classDocblock->getEndLine(), 76);
+        $this->assertEquals($classDocblock->getStartLine(), 67);
+        $this->assertEquals($classDocblock->getEndLine(), 77);
 
     }
 

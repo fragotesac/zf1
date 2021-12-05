@@ -240,6 +240,9 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
                 $height = $this->_userHeight;
             }
 
+            $width = (int) $width;
+            $height = (int) $height;
+
             $foreColor       = $this->_barcode->getForeColor();
             $backgroundColor = $this->_barcode->getBackgroundColor();
             $this->_resource = imagecreatetruecolor($width, $height);
@@ -262,11 +265,11 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
         $this->_adjustPosition(imagesy($this->_resource), imagesx($this->_resource));
         imagefilledrectangle(
             $this->_resource,
-            $this->_leftOffset,
-            $this->_topOffset,
-            $this->_leftOffset + $barcodeWidth - 1,
-            $this->_topOffset + $barcodeHeight - 1,
-            $this->_imageBackgroundColor
+            (int) $this->_leftOffset,
+            (int) $this->_topOffset,
+            (int) $this->_leftOffset + (int) $barcodeWidth - 1,
+            (int) $this->_topOffset + (int) $barcodeHeight - 1,
+            (int) $this->_imageBackgroundColor
         );
     }
 
@@ -368,9 +371,17 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
         );
 
         if ($filled) {
-            imagefilledpolygon($this->_resource, $newPoints, 4, $allocatedColor);
+            if (version_compare(PHP_VERSION, '8.0.0', '>=')) {
+                imagefilledpolygon($this->_resource, $newPoints, $allocatedColor);
+            } else {
+                imagefilledpolygon($this->_resource, $newPoints, 4, $allocatedColor);
+            }
         } else {
-            imagepolygon($this->_resource, $newPoints, 4, $allocatedColor);
+            if (version_compare(PHP_VERSION, '8.0.0', '>=')) {
+                imagepolygon($this->_resource, $newPoints, $allocatedColor);
+            } else {
+                imagepolygon($this->_resource, $newPoints, 4, $allocatedColor);
+            }
         }
     }
 
