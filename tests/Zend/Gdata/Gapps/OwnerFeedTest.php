@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/OwnerFeed.php';
 class Zend_Gdata_Gapps_OwnerFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $ownerFeed = null;
+    protected $emptyOwnerFeed;
 
     /**
       * Called before each test to setup any fixtures.
@@ -77,7 +78,7 @@ class Zend_Gdata_Gapps_OwnerFeedTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->ownerFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_OwnerEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_OwnerEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +88,7 @@ class Zend_Gdata_Gapps_OwnerFeedTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newOwnerFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_OwnerEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_OwnerEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

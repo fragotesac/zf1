@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_CellFeedTest extends PHPUnit\Framework\TestCase
 {
+    protected $cellFeed;
 
     public function setUp(): void
     {
@@ -48,7 +49,7 @@ class Zend_Gdata_Spreadsheets_CellFeedTest extends PHPUnit\Framework\TestCase
 
         foreach($this->cellFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
         }
         $this->assertTrue($this->cellFeed->getRowCount() instanceof Zend_Gdata_Spreadsheets_Extension_RowCount);
         $this->assertTrue($this->cellFeed->getRowCount()->getText() == '100');
@@ -65,7 +66,7 @@ class Zend_Gdata_Spreadsheets_CellFeedTest extends PHPUnit\Framework\TestCase
 
         foreach($newCellFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
         }
         $this->assertTrue($newCellFeed->getRowCount() instanceof Zend_Gdata_Spreadsheets_Extension_RowCount);
         $this->assertTrue($newCellFeed->getRowCount()->getText() == '100');

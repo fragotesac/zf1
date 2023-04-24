@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/EmailListFeed.php';
 class Zend_Gdata_Gapps_EmailListFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $emailListFeed = null;
+    protected $emptyEmailListFeed;
 
     /**
       * Called before each test to setup any fixtures.
@@ -77,7 +78,7 @@ class Zend_Gdata_Gapps_EmailListFeedTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->emailListFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_EmailListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_EmailListEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +88,7 @@ class Zend_Gdata_Gapps_EmailListFeedTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newEmailListFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_EmailListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_EmailListEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

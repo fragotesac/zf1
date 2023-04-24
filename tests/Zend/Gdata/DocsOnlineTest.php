@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_DocsOnlineTest extends PHPUnit\Framework\TestCase
 {
+    protected $gdata;
+    protected $docTitle;
 
     public function setUp(): void
     {
@@ -58,25 +60,25 @@ class Zend_Gdata_DocsOnlineTest extends PHPUnit\Framework\TestCase
     public function testGetSpreadsheetFeed()
     {
         $feed = $this->gdata->getDocumentListFeed();
-        $this->assertTrue($feed instanceof Zend_Gdata_Docs_DocumentListFeed);
+        $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Docs_DocumentListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $query = new Zend_Gdata_Docs_Query();
         $feed = $this->gdata->getDocumentListFeed($query);
-        $this->assertTrue($feed instanceof Zend_Gdata_Docs_DocumentListFeed);
+        $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Docs_DocumentListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $uri = $query->getQueryUrl();
         $feed = $this->gdata->getDocumentListFeed($uri);
-        $this->assertTrue($feed instanceof Zend_Gdata_Docs_DocumentListFeed);
+        $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Docs_DocumentListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
     }
@@ -95,7 +97,7 @@ class Zend_Gdata_DocsOnlineTest extends PHPUnit\Framework\TestCase
         $feed = $this->gdata->getDocumentListFeed($query);
         $selfLinkHref = $feed->entries[0]->getSelfLink()->href;
         $entry = $this->gdata->getDocumentListEntry($selfLinkHref);
-        $this->assertTrue($entry instanceof Zend_Gdata_Docs_DocumentListEntry);
+        $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListEntry::class, $entry);
     }
 
     public function testUploadFindAndDelete()

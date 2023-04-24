@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_SpreadsheetFeedTest extends PHPUnit\Framework\TestCase
 {
+    protected $sprFeed;
 
     public function setUp(): void
     {
@@ -46,7 +47,7 @@ class Zend_Gdata_Spreadsheets_SpreadsheetFeedTest extends PHPUnit\Framework\Test
         $this->assertTrue(count($this->sprFeed->entries) == 1);
         foreach($this->sprFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
         }
 
         $newSprFeed = new Zend_Gdata_Spreadsheets_SpreadsheetFeed();
@@ -57,7 +58,7 @@ class Zend_Gdata_Spreadsheets_SpreadsheetFeedTest extends PHPUnit\Framework\Test
         $this->assertTrue(count($newSprFeed->entries) == 1);
         foreach($newSprFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
         }
     }
 

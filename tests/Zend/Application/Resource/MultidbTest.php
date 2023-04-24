@@ -34,6 +34,11 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
     protected $_dbOptions = array('db1' => array('adapter' => 'pdo_mysql','dbname' => 'db1','password' => 'XXXX','username' => 'webuser'),
                                 'db2' => array('adapter' => 'pdo_pgsql', 'dbname' => 'db2', 'password' => 'notthatpublic', 'username' => 'dba'));
 
+    protected $loaders;
+    protected $autoloader;
+    protected $application;
+    protected $bootstrap;
+
     public function setUp(): void
     {
         // Store original autoloaders
@@ -77,7 +82,7 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
         $resource->setBootstrap($this->bootstrap);
         $resource->setOptions($this->_dbOptions);
         $res = $resource->init();
-        $this->assertTrue($res instanceof Zend_Application_Resource_Multidb);
+        $this->assertInstanceOf(Zend_Application_Resource_Multidb::class, $res);
     }
 
     public function testDbsAreSetupCorrectlyObject()

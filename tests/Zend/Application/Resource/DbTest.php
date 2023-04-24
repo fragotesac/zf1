@@ -30,6 +30,11 @@
  */
 class Zend_Application_Resource_DbTest extends PHPUnit\Framework\TestCase
 {
+    protected $loaders;
+    protected $autoloader;
+    protected $application;
+    protected $bootstrap;
+
     public function setUp(): void
     {
         // Store original autoloaders
@@ -118,7 +123,7 @@ class Zend_Application_Resource_DbTest extends PHPUnit\Framework\TestCase
         $resource = new Zend_Application_Resource_Db($config);
         $resource->init();
         $db = $resource->getDbAdapter();
-        $this->assertTrue($db instanceof Zend_Db_Adapter_Pdo_Sqlite);
+        $this->assertInstanceOf(Zend_Db_Adapter_Pdo_Sqlite::class, $db);
     }
 
     /**

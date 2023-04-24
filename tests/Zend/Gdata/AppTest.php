@@ -34,6 +34,18 @@ require_once 'Zend/Gdata/HttpClient.php';
  */
 class Zend_Gdata_AppTest extends PHPUnit\Framework\TestCase
 {
+    protected $adapter;
+    protected $client;
+    protected $service;
+    protected $fileName;
+    protected $expectedEtag;
+    protected $expectedMajorProtocolVersion;
+    protected $expectedMinorProtocolVersion;
+    protected $httpEntrySample;
+    protected $httpEntrySampleWithoutVersion;
+    protected $httpFeedSample;
+    protected $httpFeedSampleWithoutVersion;
+
     public function setUp(): void
     {
         $this->fileName = 'Zend/Gdata/App/_files/FeedSample1.xml';
@@ -669,7 +681,7 @@ class Zend_Gdata_AppTest extends PHPUnit\Framework\TestCase
         try {
             $eq = $this->service->newEventQuery();
             restore_error_handler();
-            $this->assertTrue($eq instanceof Zend_Gdata_Calendar_EventQuery);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventQuery::class, $eq);
         } catch (Zend_Gdata_App_Exception $ex) {
             // If we catch this exception, it means the ErrorException resulting
             // from the include_once E_NOTICE was caught in the right place,

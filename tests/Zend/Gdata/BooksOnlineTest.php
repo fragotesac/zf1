@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
 {
+    protected $gdata;
+
     public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
@@ -62,9 +64,9 @@ class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
         $query->setMinViewability('partial_view');
         $feed = $this->gdata->getVolumeFeed($query);
 
-        $this->assertTrue($feed instanceof Zend_Gdata_Books_VolumeFeed);
+        $this->assertInstanceOf(Zend_Gdata_Books_VolumeFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Books_VolumeEntry);
+            $this->assertInstanceOf(Zend_Gdata_Books_VolumeEntry::class, $entry);
             $this->assertEquals($feed->getHttpClient(), $entry->getHttpClient());
         }
 
@@ -75,15 +77,15 @@ class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
     public function testGetVolumetEntry()
     {
         $entry = $this->gdata->getVolumeEntry('Mfer_MFwQrkC');
-        $this->assertTrue($entry instanceof Zend_Gdata_Books_VolumeEntry);
+        $this->assertInstanceOf(Zend_Gdata_Books_VolumeEntry::class, $entry);
     }
 
     public function testUserLibraryFeed()
     {
         $feed = $this->gdata->getUserLibraryFeed();
-        $this->assertTrue($feed instanceof Zend_Gdata_Books_VolumeFeed);
+        $this->assertInstanceOf(Zend_Gdata_Books_VolumeFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Books_VolumeEntry);
+            $this->assertInstanceOf(Zend_Gdata_Books_VolumeEntry::class, $entry);
             $this->assertEquals(
                 $feed->getHttpClient(),
                 $entry->getHttpClient()
@@ -93,16 +95,16 @@ class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
         $entry = new Zend_Gdata_Books_VolumeEntry();
         $entry->setId(new Zend_Gdata_App_Extension_Id('Mfer_MFwQrkC'));
         $newEntry = $this->gdata->insertVolume($entry);
-        $this->assertTrue($newEntry instanceof Zend_Gdata_Books_VolumeEntry);
+        $this->assertInstanceOf(Zend_Gdata_Books_VolumeEntry::class, $newEntry);
         $this->gdata->deleteVolume($newEntry);
     }
 
     public function testUserAnnotationFeed()
     {
         $feed = $this->gdata->getUserAnnotationFeed();
-        $this->assertTrue($feed instanceof Zend_Gdata_Books_VolumeFeed);
+        $this->assertInstanceOf(Zend_Gdata_Books_VolumeFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Books_VolumeEntry);
+            $this->assertInstanceOf(Zend_Gdata_Books_VolumeEntry::class, $entry);
             $this->assertEquals(
                 $feed->getHttpClient(),
                 $entry->getHttpClient()
@@ -116,7 +118,7 @@ class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
             $entry,
             Zend_Gdata_Books::MY_ANNOTATION_FEED_URI
         );
-        $this->assertTrue($newEntry instanceof Zend_Gdata_Books_VolumeEntry);
+        $this->assertInstanceOf(Zend_Gdata_Books_VolumeEntry::class, $newEntry);
         $this->gdata->deleteVolume($newEntry);
     }
 }

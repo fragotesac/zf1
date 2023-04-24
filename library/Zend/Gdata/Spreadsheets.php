@@ -42,6 +42,11 @@ class Zend_Gdata_Spreadsheets extends Zend_Gdata
     const AUTH_SERVICE_NAME = 'wise';
 
     /**
+     * @var string
+     */
+    protected $_server;
+
+    /**
      * Namespaces used for Zend_Gdata_Photos
      *
      * @var array

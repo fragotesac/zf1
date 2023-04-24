@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/MemberFeed.php';
 class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $memberFeed = null;
+    protected $emptyMemberFeed = null;
 
     /**
       * Called before each test to setup any fixtures.
@@ -77,7 +78,7 @@ class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->memberFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_MemberEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_MemberEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +88,7 @@ class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newMemberFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_MemberEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_MemberEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

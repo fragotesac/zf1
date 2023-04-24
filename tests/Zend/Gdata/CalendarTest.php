@@ -34,6 +34,9 @@ require_once 'Zend/Gdata/Calendar/EventFeed.php';
  */
 class Zend_Gdata_CalendarTest extends PHPUnit\Framework\TestCase
 {
+    protected $eventFeed;
+    protected $eventFeedText;
+
     public function setUp(): void
     {
         $this->eventFeedText = file_get_contents(
@@ -70,7 +73,7 @@ class Zend_Gdata_CalendarTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->eventFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -80,7 +83,7 @@ class Zend_Gdata_CalendarTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newEventFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

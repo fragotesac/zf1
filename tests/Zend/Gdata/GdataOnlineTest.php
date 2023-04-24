@@ -38,6 +38,8 @@ class Zend_Gdata_GdataOnlineTest extends PHPUnit\Framework\TestCase
 {
     private $blog = null; // blog ID from config
 
+    protected $gdata;
+
     public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
@@ -272,19 +274,19 @@ class Zend_Gdata_GdataOnlineTest extends PHPUnit\Framework\TestCase
             'Zend_Gdata_App_Feed');
 
         $this->assertNotNull($feed);
-        $this->assertTrue($feed instanceof Zend_Gdata_App_Feed);
+        $this->assertInstanceOf(Zend_Gdata_App_Feed::class, $feed);
         $this->assertEquals($feed->count(), 25);
 
         $nextFeed = $gd->getNextFeed($feed);
 
         $this->assertNotNull($nextFeed);
-        $this->assertTrue($nextFeed instanceof Zend_Gdata_App_Feed);
+        $this->assertInstanceOf(Zend_Gdata_App_Feed::class, $nextFeed);
         $this->assertEquals($nextFeed->count(), 25);
 
         $previousFeed = $gd->getPreviousFeed($nextFeed);
 
         $this->assertNotNull($previousFeed);
-        $this->assertTrue($previousFeed instanceof Zend_Gdata_App_Feed);
+        $this->assertInstanceOf(Zend_Gdata_App_Feed::class, $previousFeed);
         $this->assertEquals($previousFeed->count(), 25);
 
     }
@@ -305,13 +307,13 @@ class Zend_Gdata_GdataOnlineTest extends PHPUnit\Framework\TestCase
         $nextFeed = $feed->getNextFeed();
 
         $this->assertNotNull($nextFeed);
-        $this->assertTrue($nextFeed instanceof Zend_Gdata_App_Feed);
+        $this->assertInstanceOf(Zend_Gdata_App_Feed::class, $nextFeed);
         $this->assertEquals($nextFeed->count(), 25);
 
         $previousFeed = $nextFeed->getPreviousFeed();
 
         $this->assertNotNull($previousFeed);
-        $this->assertTrue($previousFeed instanceof Zend_Gdata_App_Feed);
+        $this->assertInstanceOf(Zend_Gdata_App_Feed::class, $previousFeed);
         $this->assertEquals($previousFeed->count(), 25);
 
     }
@@ -344,7 +346,7 @@ class Zend_Gdata_GdataOnlineTest extends PHPUnit\Framework\TestCase
         $gdata->useObjectMapping(true);
         $entry = $gdata->getEntry(
             'http://gdata.youtube.com/feeds/api/videos/O4SWAfisH-8');
-        $this->assertTrue($entry instanceof Zend_Gdata_Entry);
+        $this->assertInstanceOf(Zend_Gdata_Entry::class, $entry);
     }
 
 }

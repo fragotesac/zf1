@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/NicknameFeed.php';
 class Zend_Gdata_Gapps_NicknameFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $nicknameFeed = null;
+    protected $emptyNicknameFeed = null;
 
     /**
       * Called before each test to setup any fixtures.
@@ -77,7 +78,7 @@ class Zend_Gdata_Gapps_NicknameFeedTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->nicknameFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_NicknameEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_NicknameEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +88,7 @@ class Zend_Gdata_Gapps_NicknameFeedTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newNicknameFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_NicknameEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_NicknameEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

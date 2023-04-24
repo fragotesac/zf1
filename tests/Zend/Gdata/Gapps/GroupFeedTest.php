@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/GroupFeed.php';
 class Zend_Gdata_Gapps_GroupFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $groupFeed = null;
+    protected $emptyGroupFeed;
 
     /**
       * Called before each test to setup any fixtures.
@@ -77,7 +78,7 @@ class Zend_Gdata_Gapps_GroupFeedTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->groupFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_GroupEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_GroupEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +88,7 @@ class Zend_Gdata_Gapps_GroupFeedTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newGroupFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_GroupEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_GroupEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }
