@@ -79,7 +79,7 @@
         "fragotesac/zf1-view-helper-json": "^1.0.4",
         "fragotesac/zf1-view-helper-layout": "^1.0.4",
         "fragotesac/zf1-view-helper-navigation": "^1.0.4",
-        "fragotesac/zf1-view-helper-pagination": "^1.0.4",
+        "fragotesac/zf1-view-helper-paginationcontrol": "^1.0.4",
         "fragotesac/zf1-view-helper-partial": "^1.0.5",
         "fragotesac/zf1-view-helper-url": "^1.0.4",
         "fragotesac/zf1-wildfire": "^1.0.4",
